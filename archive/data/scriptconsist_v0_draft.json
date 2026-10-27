@@ -1,0 +1,989 @@
+{
+  "metadata": {
+    "benchmark": "ScriptConsist",
+    "version": "1.0",
+    "description": "Cross-script factual consistency benchmark for EN / HI_DEV / HI_ROM",
+    "total_questions": 65,
+    "domains": [
+      "Civics",
+      "Culture",
+      "Current Affairs",
+      "Geography",
+      "History",
+      "Science"
+    ],
+    "scripts": [
+      "en",
+      "hi_dev",
+      "hi_rom"
+    ]
+  },
+  "questions": [
+    {
+      "id": "civ_001",
+      "domain": "Civics",
+      "en": "How many fundamental rights are guaranteed by the Indian Constitution?",
+      "hi_dev": "भारतीय संविधान द्वारा कितने मौलिक अधिकार दिए गए हैं?",
+      "hi_rom": "Bhartiya samvidhan dwara kitne maulik adhikar diye gaye hain?",
+      "gold_answer": "6",
+      "gold_variants": [
+        "6",
+        "six",
+        "छह"
+      ],
+      "answer_type": "numeric",
+      "source": "Constitution of India, Part III"
+    },
+    {
+      "id": "civ_002",
+      "domain": "Civics",
+      "en": "What is the minimum age to become the President of India?",
+      "hi_dev": "भारत का राष्ट्रपति बनने की न्यूनतम आयु क्या है?",
+      "hi_rom": "Bharat ka rashtrapati banne ki nyuntam aayu kya hai?",
+      "gold_answer": "35 years",
+      "gold_variants": [
+        "35",
+        "35 years",
+        "35 वर्ष"
+      ],
+      "answer_type": "numeric",
+      "source": "Article 58 of the Constitution of India"
+    },
+    {
+      "id": "civ_003",
+      "domain": "Civics",
+      "en": "Which article of the Indian Constitution abolishes untouchability?",
+      "hi_dev": "भारतीय संविधान का कौन सा अनुच्छेद अस्पृश्यता का अंत करता है?",
+      "hi_rom": "Bhartiya samvidhan ka kaun sa anuchhed asprishyata ka ant karta hai?",
+      "gold_answer": "Article 17",
+      "gold_variants": [
+        "Article 17",
+        "17",
+        "अनुच्छेद 17"
+      ],
+      "answer_type": "entity",
+      "source": "Constitution of India"
+    },
+    {
+      "id": "civ_004",
+      "domain": "Civics",
+      "en": "What is the term length of a Rajya Sabha member?",
+      "hi_dev": "राज्यसभा सदस्य का कार्यकाल कितने वर्ष का होता है?",
+      "hi_rom": "Rajya Sabha sadasya ka karyakaal kitne varsh ka hota hai?",
+      "gold_answer": "6 years",
+      "gold_variants": [
+        "6 years",
+        "6",
+        "छह वर्ष"
+      ],
+      "answer_type": "numeric",
+      "source": "Constitution of India"
+    },
+    {
+      "id": "civ_005",
+      "domain": "Civics",
+      "en": "Who appoints the Chief Justice of India?",
+      "hi_dev": "भारत के मुख्य न्यायाधीश की नियुक्ति कौन करता है?",
+      "hi_rom": "Bharat ke mukhya nyayadhish ki niyukti kaun karta hai?",
+      "gold_answer": "The President of India",
+      "gold_variants": [
+        "President of India",
+        "President",
+        "राष्ट्रपति"
+      ],
+      "answer_type": "entity",
+      "source": "Article 124 of the Constitution of India"
+    },
+    {
+      "en": "What is the minimum voting age in India?",
+      "hi_dev": "भारत में मतदान की न्यूनतम आयु क्या है?",
+      "hi_rom": "Bharat mein matdaan ki nyuntam aayu kya hai?",
+      "gold_answer": "18 years",
+      "gold_variants": [
+        "18",
+        "18 years",
+        "18 वर्ष"
+      ],
+      "answer_type": "numeric",
+      "id": "civ_006",
+      "domain": "Civics",
+      "source": "Constitution of India"
+    },
+    {
+      "en": "Which schedule of the Indian Constitution lists the languages?",
+      "hi_dev": "भारतीय संविधान की कौन सी अनुसूची में भाषाएँ सूचीबद्ध हैं?",
+      "hi_rom": "Bhartiya samvidhan ki kaun si anusuchi mein bhashayen suchibaddh hain?",
+      "gold_answer": "Eighth Schedule",
+      "gold_variants": [
+        "Eighth Schedule",
+        "8th Schedule",
+        "आठवीं अनुसूची"
+      ],
+      "answer_type": "entity",
+      "id": "civ_007",
+      "domain": "Civics",
+      "source": "Constitution of India"
+    },
+    {
+      "en": "Who was the chairman of the Drafting Committee of the Indian Constitution?",
+      "hi_dev": "भारतीय संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",
+      "hi_rom": "Bhartiya samvidhan ki prarup samiti ke adhyaksh kaun the?",
+      "gold_answer": "Dr. B.R. Ambedkar",
+      "gold_variants": [
+        "Ambedkar",
+        "B.R. Ambedkar",
+        "बी.आर. अम्बेडकर"
+      ],
+      "answer_type": "entity",
+      "id": "civ_008",
+      "domain": "Civics",
+      "source": "Constitution of India"
+    },
+    {
+      "en": "When did the Indian Constitution come into effect?",
+      "hi_dev": "भारतीय संविधान कब लागू हुआ?",
+      "hi_rom": "Bhartiya samvidhan kab laagu hua?",
+      "gold_answer": "26 January 1950",
+      "gold_variants": [
+        "26 January 1950",
+        "January 26, 1950",
+        "26 जनवरी 1950"
+      ],
+      "answer_type": "date",
+      "id": "civ_009",
+      "domain": "Civics",
+      "source": "Constitution of India"
+    },
+    {
+      "en": "What is the Preamble of the Indian Constitution also known as?",
+      "hi_dev": "भारतीय संविधान की प्रस्तावना को और क्या कहा जाता है?",
+      "hi_rom": "Bhartiya samvidhan ki prastavna ko aur kya kaha jata hai?",
+      "gold_answer": "Identity card of the Constitution",
+      "gold_variants": [
+        "Identity card",
+        "Key to the Constitution",
+        "Soul of the Constitution",
+        "संविधान की कुंजी"
+      ],
+      "answer_type": "descriptive",
+      "id": "civ_010",
+      "domain": "Civics",
+      "source": "Constitution of India"
+    },
+    {
+      "id": "cul_001",
+      "domain": "Culture",
+      "en": "Which classical dance form originated in Kerala?",
+      "hi_dev": "कौन सा शास्त्रीय नृत्य केरल में उत्पन्न हुआ?",
+      "hi_rom": "Kaun sa shastriya nritya Kerala mein utpann hua?",
+      "gold_answer": "Kathakali",
+      "gold_variants": [
+        "Kathakali",
+        "कथकली",
+        "Mohiniyattam"
+      ],
+      "answer_type": "entity",
+      "source": "Indian classical arts"
+    },
+    {
+      "id": "cul_002",
+      "domain": "Culture",
+      "en": "Who wrote the Indian national anthem 'Jana Gana Mana'?",
+      "hi_dev": "भारतीय राष्ट्रगान 'जन गण मन' किसने लिखा?",
+      "hi_rom": "Bhartiya rashtra gaan 'Jana Gana Mana' kisne likha?",
+      "gold_answer": "Rabindranath Tagore",
+      "gold_variants": [
+        "Rabindranath Tagore",
+        "Tagore",
+        "रबीन्द्रनाथ टैगोर",
+        "रवींद्रनाथ ठाकुर"
+      ],
+      "answer_type": "entity",
+      "source": "Official government records"
+    },
+    {
+      "id": "cul_003",
+      "domain": "Culture",
+      "en": "Which festival is known as the festival of lights in India?",
+      "hi_dev": "भारत में किस त्योहार को रोशनी का त्योहार कहा जाता है?",
+      "hi_rom": "Bharat mein kis tyohar ko roshni ka tyohar kaha jata hai?",
+      "gold_answer": "Diwali",
+      "gold_variants": [
+        "Diwali",
+        "Deepavali",
+        "दीपावली",
+        "दिवाली"
+      ],
+      "answer_type": "entity",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "id": "cul_004",
+      "domain": "Culture",
+      "en": "In which language was the Ramayana originally written?",
+      "hi_dev": "रामायण मूल रूप से किस भाषा में लिखी गई थी?",
+      "hi_rom": "Ramayan mool roop se kis bhasha mein likhi gayi thi?",
+      "gold_answer": "Sanskrit",
+      "gold_variants": [
+        "Sanskrit",
+        "संस्कृत"
+      ],
+      "answer_type": "entity",
+      "source": "Literary history"
+    },
+    {
+      "id": "cul_005",
+      "domain": "Culture",
+      "en": "What is the traditional dress of women in Maharashtra called?",
+      "hi_dev": "महाराष्ट्र में महिलाओं की पारंपरिक पोशाक को क्या कहते हैं?",
+      "hi_rom": "Maharashtra mein mahilaon ki paramparik poshak ko kya kehte hain?",
+      "gold_answer": "Nauvari saree",
+      "gold_variants": [
+        "Nauvari saree",
+        "Nauvari sari",
+        "नऊवारी साड़ी",
+        "9-yard saree"
+      ],
+      "answer_type": "entity",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "en": "Who is considered the father of Hindi literature?",
+      "hi_dev": "हिंदी साहित्य का जनक किसे माना जाता है?",
+      "hi_rom": "Hindi sahitya ka janak kise mana jata hai?",
+      "gold_answer": "Bharatendu Harishchandra",
+      "gold_variants": [
+        "Bharatendu",
+        "Bharatendu Harishchandra",
+        "भारतेन्दु हरिश्चंद्र"
+      ],
+      "answer_type": "entity",
+      "id": "cul_006",
+      "domain": "Culture",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "en": "Which instrument does Pandit Ravi Shankar play?",
+      "hi_dev": "पंडित रवि शंकर कौन सा वाद्य यंत्र बजाते हैं?",
+      "hi_rom": "Pandit Ravi Shankar kaun sa vadya yantra bajate hain?",
+      "gold_answer": "Sitar",
+      "gold_variants": [
+        "Sitar",
+        "सितार"
+      ],
+      "answer_type": "entity",
+      "id": "cul_007",
+      "domain": "Culture",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "en": "What is the traditional boat race of Kerala called?",
+      "hi_dev": "केरल की पारंपरिक नाव दौड़ को क्या कहते हैं?",
+      "hi_rom": "Kerala ki paramparik naav daud ko kya kehte hain?",
+      "gold_answer": "Vallam Kali",
+      "gold_variants": [
+        "Vallam Kali",
+        "Snake Boat Race",
+        "वल्लम काली"
+      ],
+      "answer_type": "entity",
+      "id": "cul_008",
+      "domain": "Culture",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "en": "Which Mughal emperor is credited with building the Red Fort in Delhi?",
+      "hi_dev": "दिल्ली में लाल किले का निर्माण किस मुगल सम्राट ने करवाया?",
+      "hi_rom": "Delhi mein Lal Qile ka nirmaan kis Mughal samrat ne karwaya?",
+      "gold_answer": "Shah Jahan",
+      "gold_variants": [
+        "Shah Jahan",
+        "Shahjahan",
+        "शाहजहाँ"
+      ],
+      "answer_type": "entity",
+      "id": "cul_009",
+      "domain": "Culture",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "en": "What is the national sport of India?",
+      "hi_dev": "भारत का राष्ट्रीय खेल कौन सा है?",
+      "hi_rom": "Bharat ka rashtriya khel kaun sa hai?",
+      "gold_answer": "Hockey",
+      "gold_variants": [
+        "Hockey",
+        "Field Hockey",
+        "हॉकी"
+      ],
+      "answer_type": "entity",
+      "id": "cul_010",
+      "domain": "Culture",
+      "source": "Indian cultural knowledge"
+    },
+    {
+      "id": "cur_001",
+      "domain": "Current Affairs",
+      "en": "Which country hosted the G20 summit in 2023?",
+      "hi_dev": "2023 में G20 शिखर सम्मेलन किस देश में आयोजित हुआ?",
+      "hi_rom": "2023 mein G20 shikhar sammelan kis desh mein aayojit hua?",
+      "gold_answer": "India",
+      "gold_variants": [
+        "India",
+        "Bharat",
+        "भारत"
+      ],
+      "answer_type": "entity",
+      "source": "News records"
+    },
+    {
+      "id": "cur_002",
+      "domain": "Current Affairs",
+      "en": "What is the name of India's moon mission launched in 2023?",
+      "hi_dev": "2023 में लॉन्च किए गए भारत के चंद्र मिशन का नाम क्या है?",
+      "hi_rom": "2023 mein launch kiye gaye Bharat ke chandra mission ka naam kya hai?",
+      "gold_answer": "Chandrayaan-3",
+      "gold_variants": [
+        "Chandrayaan-3",
+        "Chandrayaan 3",
+        "चंद्रयान-3"
+      ],
+      "answer_type": "entity",
+      "source": "ISRO records"
+    },
+    {
+      "id": "cur_003",
+      "domain": "Current Affairs",
+      "en": "Which Indian city hosted the Cricket World Cup 2023 final?",
+      "hi_dev": "क्रिकेट विश्व कप 2023 का फाइनल भारत के किस शहर में हुआ?",
+      "hi_rom": "Cricket World Cup 2023 ka final Bharat ke kis sheher mein hua?",
+      "gold_answer": "Ahmedabad",
+      "gold_variants": [
+        "Ahmedabad",
+        "Narendra Modi Stadium",
+        "अहमदाबाद"
+      ],
+      "answer_type": "entity",
+      "source": "ICC records"
+    },
+    {
+      "id": "cur_004",
+      "domain": "Current Affairs",
+      "en": "What digital payment system developed by India is widely used for instant transfers?",
+      "hi_dev": "भारत द्वारा विकसित कौन सी डिजिटल भुगतान प्रणाली तत्काल ट्रांसफर के लिए व्यापक रूप से उपयोग की जाती है?",
+      "hi_rom": "Bharat dwara viksit kaun si digital bhugtan pranali tatkal transfer ke liye vyapak roop se upyog ki jaati hai?",
+      "gold_answer": "UPI",
+      "gold_variants": [
+        "UPI",
+        "Unified Payments Interface",
+        "यूपीआई"
+      ],
+      "answer_type": "entity",
+      "source": "NPCI / RBI records"
+    },
+    {
+      "id": "cur_005",
+      "domain": "Current Affairs",
+      "en": "Which Indian state was bifurcated in 2024 to create a new state?",
+      "hi_dev": "2024 में किस भारतीय राज्य को विभाजित करके नया राज्य बनाया गया?",
+      "hi_rom": "2024 mein kis Bhartiya rajya ko vibhajit karke naya rajya banaya gaya?",
+      "gold_answer": "None (no Indian state was bifurcated in 2024)",
+      "gold_variants": [
+        "None",
+        "No state was bifurcated",
+        "कोई नहीं"
+      ],
+      "answer_type": "entity",
+      "source": "Government records — this is a trick question to test hallucination"
+    },
+    {
+      "en": "Which digital initiative of the Indian government provides a unique identity number to residents?",
+      "hi_dev": "भारत सरकार की कौन सी डिजिटल पहल निवासियों को एक विशिष्ट पहचान संख्या प्रदान करती है?",
+      "hi_rom": "Bharat sarkar ki kaun si digital pehal nivasiyon ko ek vishisht pehchaan sankhya pradaan karti hai?",
+      "gold_answer": "Aadhaar",
+      "gold_variants": [
+        "Aadhaar",
+        "Aadhar",
+        "आधार",
+        "UIDAI"
+      ],
+      "answer_type": "entity",
+      "id": "cur_006",
+      "domain": "Current Affairs",
+      "source": "News records / Government data"
+    },
+    {
+      "en": "What is the name of India's first indigenous aircraft carrier?",
+      "hi_dev": "भारत के पहले स्वदेशी विमानवाहक पोत का नाम क्या है?",
+      "hi_rom": "Bharat ke pehle swadeshi vimanvahak pot ka naam kya hai?",
+      "gold_answer": "INS Vikrant",
+      "gold_variants": [
+        "INS Vikrant",
+        "Vikrant",
+        "आईएनएस विक्रांत"
+      ],
+      "answer_type": "entity",
+      "id": "cur_007",
+      "domain": "Current Affairs",
+      "source": "News records / Government data"
+    },
+    {
+      "en": "Which Indian city is being developed as a new national capital?",
+      "hi_dev": "कौन सा भारतीय शहर नई राष्ट्रीय राजधानी के रूप में विकसित किया जा रहा है?",
+      "hi_rom": "Kaun sa Bhartiya sheher nayi rashtriya rajdhani ke roop mein viksit kiya ja raha hai?",
+      "gold_answer": "Amaravati",
+      "gold_variants": [
+        "Amaravati",
+        "अमरावती"
+      ],
+      "answer_type": "entity",
+      "id": "cur_008",
+      "domain": "Current Affairs",
+      "source": "News records / Government data"
+    },
+    {
+      "en": "What is India's rank among the world's largest economies by GDP?",
+      "hi_dev": "जीडीपी के अनुसार विश्व की सबसे बड़ी अर्थव्यवस्थाओं में भारत का क्या स्थान है?",
+      "hi_rom": "GDP ke anusaar vishwa ki sabse badi arthvyavasthaon mein Bharat ka kya sthaan hai?",
+      "gold_answer": "5th",
+      "gold_variants": [
+        "5th",
+        "5",
+        "fifth",
+        "पांचवा"
+      ],
+      "answer_type": "numeric",
+      "id": "cur_009",
+      "domain": "Current Affairs",
+      "source": "News records / Government data"
+    },
+    {
+      "en": "Which Indian startup became the most valued in India in 2024?",
+      "hi_dev": "2024 में कौन सा भारतीय स्टार्टअप भारत में सबसे अधिक मूल्यवान बना?",
+      "hi_rom": "2024 mein kaun sa Bhartiya startup Bharat mein sabse adhik mulyavaan bana?",
+      "gold_answer": "Zepto",
+      "gold_variants": [
+        "Zepto",
+        "ज़ेप्टो"
+      ],
+      "answer_type": "entity",
+      "id": "cur_010",
+      "domain": "Current Affairs",
+      "source": "News records / Government data"
+    },
+    {
+      "id": "geo_001",
+      "domain": "Geography",
+      "en": "Which is the largest state of India by area?",
+      "hi_dev": "क्षेत्रफल के अनुसार भारत का सबसे बड़ा राज्य कौन सा है?",
+      "hi_rom": "Kshetrafal ke anusaar Bharat ka sabse bada rajya kaun sa hai?",
+      "gold_answer": "Rajasthan",
+      "gold_variants": [
+        "Rajasthan",
+        "राजस्थान"
+      ],
+      "answer_type": "entity",
+      "source": "Census of India / Government records"
+    },
+    {
+      "id": "geo_002",
+      "domain": "Geography",
+      "en": "Which river is the longest in India?",
+      "hi_dev": "भारत की सबसे लंबी नदी कौन सी है?",
+      "hi_rom": "Bharat ki sabse lambi nadi kaun si hai?",
+      "gold_answer": "Ganga",
+      "gold_variants": [
+        "Ganga",
+        "Ganges",
+        "गंगा",
+        "Ganga river",
+        "River Ganges"
+      ],
+      "answer_type": "entity",
+      "source": "Geographical Survey of India"
+    },
+    {
+      "id": "geo_003",
+      "domain": "Geography",
+      "en": "What is the capital of Madhya Pradesh?",
+      "hi_dev": "मध्य प्रदेश की राजधानी क्या है?",
+      "hi_rom": "Madhya Pradesh ki rajdhani kya hai?",
+      "gold_answer": "Bhopal",
+      "gold_variants": [
+        "Bhopal",
+        "भोपाल"
+      ],
+      "answer_type": "entity",
+      "source": "Government of India records"
+    },
+    {
+      "id": "geo_004",
+      "domain": "Geography",
+      "en": "Which mountain range separates India from China?",
+      "hi_dev": "कौन सी पर्वत श्रृंखला भारत को चीन से अलग करती है?",
+      "hi_rom": "Kaun si parvat shrinkhala Bharat ko China se alag karti hai?",
+      "gold_answer": "Himalayas",
+      "gold_variants": [
+        "Himalayas",
+        "Himalaya",
+        "हिमालय",
+        "Himalayan range"
+      ],
+      "answer_type": "entity",
+      "source": "Geography textbooks"
+    },
+    {
+      "id": "geo_005",
+      "domain": "Geography",
+      "en": "How many states are there in India?",
+      "hi_dev": "भारत में कितने राज्य हैं?",
+      "hi_rom": "Bharat mein kitne rajya hain?",
+      "gold_answer": "28",
+      "gold_variants": [
+        "28",
+        "28 states",
+        "अट्ठाईस"
+      ],
+      "answer_type": "numeric",
+      "source": "Constitution of India (as amended)"
+    },
+    {
+      "en": "Which river originates from the Gangotri glacier?",
+      "hi_dev": "गंगोत्री हिमनद से कौन सी नदी निकलती है?",
+      "hi_rom": "Gangotri himnad se kaun si nadi nikalti hai?",
+      "gold_answer": "Ganga",
+      "gold_variants": [
+        "Ganga",
+        "Ganges",
+        "गंगा"
+      ],
+      "answer_type": "entity",
+      "id": "geo_006",
+      "domain": "Geography",
+      "source": "Geography of India / Government records"
+    },
+    {
+      "en": "Which Indian state is known as the Land of Five Rivers?",
+      "hi_dev": "किस भारतीय राज्य को पांच नदियों की भूमि कहा जाता है?",
+      "hi_rom": "Kis Bhartiya rajya ko paanch nadiyon ki bhoomi kaha jata hai?",
+      "gold_answer": "Punjab",
+      "gold_variants": [
+        "Punjab",
+        "पंजाब"
+      ],
+      "answer_type": "entity",
+      "id": "geo_007",
+      "domain": "Geography",
+      "source": "Geography of India / Government records"
+    },
+    {
+      "en": "Which is the largest lake in India by surface area?",
+      "hi_dev": "सतह क्षेत्रफल के अनुसार भारत की सबसे बड़ी झील कौन सी है?",
+      "hi_rom": "Satah kshetrafal ke anusaar Bharat ki sabse badi jheel kaun si hai?",
+      "gold_answer": "Chilika Lake",
+      "gold_variants": [
+        "Chilika",
+        "Chilika Lake",
+        "चिल्का झील"
+      ],
+      "answer_type": "entity",
+      "id": "geo_008",
+      "domain": "Geography",
+      "source": "Geography of India / Government records"
+    },
+    {
+      "en": "What is the southernmost point of mainland India called?",
+      "hi_dev": "मुख्य भूमि भारत के सबसे दक्षिणी बिंदु को क्या कहते हैं?",
+      "hi_rom": "Mukhya bhoomi Bharat ke sabse dakshini bindu ko kya kehte hain?",
+      "gold_answer": "Kanyakumari",
+      "gold_variants": [
+        "Kanyakumari",
+        "Cape Comorin",
+        "कन्याकुमारी"
+      ],
+      "answer_type": "entity",
+      "id": "geo_009",
+      "domain": "Geography",
+      "source": "Geography of India / Government records"
+    },
+    {
+      "en": "Which two seas does the Palk Strait connect?",
+      "hi_dev": "पाक जलडमरूमध्य कौन से दो समुद्रों को जोड़ता है?",
+      "hi_rom": "Palk Jaldharmadhy kaun se do samudron ko jodta hai?",
+      "gold_answer": "Bay of Bengal and Arabian Sea (via Palk Bay and Gulf of Mannar)",
+      "gold_variants": [
+        "Bay of Bengal and Palk Bay",
+        "बंगाल की खाड़ी"
+      ],
+      "answer_type": "descriptive",
+      "id": "geo_010",
+      "domain": "Geography",
+      "source": "Geography of India / Government records"
+    },
+    {
+      "id": "hist_001",
+      "domain": "History",
+      "en": "Who was the first President of India?",
+      "hi_dev": "भारत के पहले राष्ट्रपति कौन थे?",
+      "hi_rom": "Bharat ke pehle rashtrapati kaun the?",
+      "gold_answer": "Dr. Rajendra Prasad",
+      "gold_variants": [
+        "Rajendra Prasad",
+        "Dr Rajendra Prasad",
+        "राजेंद्र प्रसाद",
+        "Rajendra Prasad ji"
+      ],
+      "answer_type": "entity",
+      "source": "Constitution of India / Official Records"
+    },
+    {
+      "id": "hist_002",
+      "domain": "History",
+      "en": "In which year did India gain independence from British rule?",
+      "hi_dev": "भारत को ब्रिटिश शासन से स्वतंत्रता किस वर्ष मिली?",
+      "hi_rom": "Bharat ko British shaasan se swatantrata kis varsh mili?",
+      "gold_answer": "1947",
+      "gold_variants": [
+        "1947",
+        "15 August 1947",
+        "15 अगस्त 1947"
+      ],
+      "answer_type": "date",
+      "source": "Indian Independence Act 1947"
+    },
+    {
+      "id": "hist_003",
+      "domain": "History",
+      "en": "Who is known as the Father of the Indian Constitution?",
+      "hi_dev": "भारतीय संविधान के जनक किसे कहा जाता है?",
+      "hi_rom": "Bhartiya samvidhan ke janak kise kaha jata hai?",
+      "gold_answer": "Dr. B.R. Ambedkar",
+      "gold_variants": [
+        "Ambedkar",
+        "B.R. Ambedkar",
+        "Bhimrao Ambedkar",
+        "बी.आर. अम्बेडकर",
+        "भीमराव अम्बेडकर"
+      ],
+      "answer_type": "entity",
+      "source": "Constitution of India historical records"
+    },
+    {
+      "id": "hist_004",
+      "domain": "History",
+      "en": "Which Mughal emperor built the Taj Mahal?",
+      "hi_dev": "ताज महल किस मुगल सम्राट ने बनवाया था?",
+      "hi_rom": "Taj Mahal kis Mughal samrat ne banwaya tha?",
+      "gold_answer": "Shah Jahan",
+      "gold_variants": [
+        "Shah Jahan",
+        "Shahjahan",
+        "शाहजहाँ"
+      ],
+      "answer_type": "entity",
+      "source": "Historical records"
+    },
+    {
+      "id": "hist_005",
+      "domain": "History",
+      "en": "In which year was the Battle of Plassey fought?",
+      "hi_dev": "प्लासी का युद्ध किस वर्ष हुआ था?",
+      "hi_rom": "Plassey ka yuddh kis varsh hua tha?",
+      "gold_answer": "1757",
+      "gold_variants": [
+        "1757"
+      ],
+      "answer_type": "date",
+      "source": "Indian history textbooks"
+    },
+    {
+      "en": "Which movement was launched by Gandhi in 1942?",
+      "hi_dev": "1942 में गांधी ने कौन सा आंदोलन शुरू किया?",
+      "hi_rom": "1942 mein Gandhi ne kaun sa andolan shuru kiya?",
+      "gold_answer": "Quit India Movement",
+      "gold_variants": [
+        "Quit India",
+        "Bharat Chhodo Andolan",
+        "भारत छोड़ो आंदोलन"
+      ],
+      "answer_type": "entity",
+      "id": "hist_006",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Who was the founder of the Maurya Empire?",
+      "hi_dev": "मौर्य साम्राज्य के संस्थापक कौन थे?",
+      "hi_rom": "Maurya samrajya ke sansthapak kaun the?",
+      "gold_answer": "Chandragupta Maurya",
+      "gold_variants": [
+        "Chandragupta Maurya",
+        "चंद्रगुप्त मौर्य"
+      ],
+      "answer_type": "entity",
+      "id": "hist_007",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "In which year was the Battle of Panipat first fought?",
+      "hi_dev": "पानीपत की पहली लड़ाई किस वर्ष हुई?",
+      "hi_rom": "Panipat ki pehli ladai kis varsh hui?",
+      "gold_answer": "1526",
+      "gold_variants": [
+        "1526"
+      ],
+      "answer_type": "date",
+      "id": "hist_008",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Who wrote the book 'Discovery of India'?",
+      "hi_dev": "'डिस्कवरी ऑफ इंडिया' पुस्तक किसने लिखी?",
+      "hi_rom": "'Discovery of India' pustak kisne likhi?",
+      "gold_answer": "Jawaharlal Nehru",
+      "gold_variants": [
+        "Nehru",
+        "Jawaharlal Nehru",
+        "जवाहरलाल नेहरू"
+      ],
+      "answer_type": "entity",
+      "id": "hist_009",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Which empire was founded by Babur in India?",
+      "hi_dev": "बाबर ने भारत में किस साम्राज्य की स्थापना की?",
+      "hi_rom": "Babur ne Bharat mein kis samrajya ki sthapna ki?",
+      "gold_answer": "Mughal Empire",
+      "gold_variants": [
+        "Mughal Empire",
+        "Mughal",
+        "मुगल साम्राज्य"
+      ],
+      "answer_type": "entity",
+      "id": "hist_010",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "In which year did the Sepoy Mutiny begin?",
+      "hi_dev": "सिपाही विद्रोह किस वर्ष शुरू हुआ?",
+      "hi_rom": "Sipahi vidhroh kis varsh shuru hua?",
+      "gold_answer": "1857",
+      "gold_variants": [
+        "1857"
+      ],
+      "answer_type": "date",
+      "id": "hist_011",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Who was known as the Iron Man of India?",
+      "hi_dev": "भारत के लौह पुरुष किसे कहा जाता है?",
+      "hi_rom": "Bharat ke Lauh Purush kise kaha jata hai?",
+      "gold_answer": "Sardar Vallabhbhai Patel",
+      "gold_variants": [
+        "Sardar Patel",
+        "Vallabhbhai Patel",
+        "सरदार वल्लभभाई पटेल"
+      ],
+      "answer_type": "entity",
+      "id": "hist_012",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Which Sikh Guru was executed by Aurangzeb?",
+      "hi_dev": "औरंगजेब ने किस सिख गुरु को फांसी दी?",
+      "hi_rom": "Aurangzeb ne kis Sikh Guru ko faansi di?",
+      "gold_answer": "Guru Tegh Bahadur",
+      "gold_variants": [
+        "Guru Tegh Bahadur",
+        "गुरु तेग बहादुर"
+      ],
+      "answer_type": "entity",
+      "id": "hist_013",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Who was the first woman ruler of Delhi Sultanate?",
+      "hi_dev": "दिल्ली सल्तनत की पहली महिला शासक कौन थी?",
+      "hi_rom": "Delhi Sultanat ki pehli mahila shasak kaun thi?",
+      "gold_answer": "Razia Sultana",
+      "gold_variants": [
+        "Razia Sultana",
+        "Razia Sultan",
+        "रज़िया सुल्तान"
+      ],
+      "answer_type": "entity",
+      "id": "hist_014",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "en": "Which ancient Indian university is considered the world's first residential university?",
+      "hi_dev": "किस प्राचीन भारतीय विश्वविद्यालय को विश्व का पहला आवासीय विश्वविद्यालय माना जाता है?",
+      "hi_rom": "Kis prachin Bhartiya vishwavidyalaya ko vishwa ka pehla aavasiya vishwavidyalaya mana jata hai?",
+      "gold_answer": "Nalanda",
+      "gold_variants": [
+        "Nalanda",
+        "Nalanda University",
+        "नालंदा"
+      ],
+      "answer_type": "entity",
+      "id": "hist_015",
+      "domain": "History",
+      "source": "Indian history textbooks / verified records"
+    },
+    {
+      "id": "sci_001",
+      "domain": "Science",
+      "en": "What is the chemical formula of water?",
+      "hi_dev": "पानी का रासायनिक सूत्र क्या है?",
+      "hi_rom": "Paani ka rasaynik sutra kya hai?",
+      "gold_answer": "H2O",
+      "gold_variants": [
+        "H2O",
+        "H₂O"
+      ],
+      "answer_type": "entity",
+      "source": "Chemistry fundamentals"
+    },
+    {
+      "id": "sci_002",
+      "domain": "Science",
+      "en": "What is the speed of light in vacuum in meters per second?",
+      "hi_dev": "निर्वात में प्रकाश की गति मीटर प्रति सेकंड में कितनी है?",
+      "hi_rom": "Nirvaat mein prakash ki gati meter prati second mein kitni hai?",
+      "gold_answer": "299792458",
+      "gold_variants": [
+        "299792458",
+        "3 x 10^8",
+        "approximately 3 × 10⁸ m/s",
+        "3,00,000 km/s"
+      ],
+      "answer_type": "numeric",
+      "source": "Physics constants (NIST)"
+    },
+    {
+      "id": "sci_003",
+      "domain": "Science",
+      "en": "Which planet is known as the Red Planet?",
+      "hi_dev": "किस ग्रह को लाल ग्रह कहा जाता है?",
+      "hi_rom": "Kis grah ko lal grah kaha jata hai?",
+      "gold_answer": "Mars",
+      "gold_variants": [
+        "Mars",
+        "मंगल",
+        "Mangal"
+      ],
+      "answer_type": "entity",
+      "source": "Astronomy fundamentals"
+    },
+    {
+      "id": "sci_004",
+      "domain": "Science",
+      "en": "What gas do plants absorb during photosynthesis?",
+      "hi_dev": "पौधे प्रकाश संश्लेषण के दौरान कौन सी गैस अवशोषित करते हैं?",
+      "hi_rom": "Paudhe prakash sanshleshan ke dauran kaun si gas avshoshit karte hain?",
+      "gold_answer": "Carbon dioxide",
+      "gold_variants": [
+        "Carbon dioxide",
+        "CO2",
+        "CO₂",
+        "कार्बन डाइऑक्साइड"
+      ],
+      "answer_type": "entity",
+      "source": "Biology fundamentals"
+    },
+    {
+      "id": "sci_005",
+      "domain": "Science",
+      "en": "Who proposed the theory of relativity?",
+      "hi_dev": "सापेक्षता का सिद्धांत किसने प्रस्तुत किया?",
+      "hi_rom": "Sapekshata ka siddhant kisne prastut kiya?",
+      "gold_answer": "Albert Einstein",
+      "gold_variants": [
+        "Albert Einstein",
+        "Einstein",
+        "अल्बर्ट आइंस्टीन"
+      ],
+      "answer_type": "entity",
+      "source": "Physics history"
+    },
+    {
+      "en": "What is the hardest natural substance?",
+      "hi_dev": "सबसे कठोर प्राकृतिक पदार्थ कौन सा है?",
+      "hi_rom": "Sabse kathor prakritik padarth kaun sa hai?",
+      "gold_answer": "Diamond",
+      "gold_variants": [
+        "Diamond",
+        "हीरा"
+      ],
+      "answer_type": "entity",
+      "id": "sci_006",
+      "domain": "Science",
+      "source": "Science textbooks / verified facts"
+    },
+    {
+      "en": "Who is known as the father of genetics?",
+      "hi_dev": "आनुवंशिकी के जनक किसे कहा जाता है?",
+      "hi_rom": "Anuwanshiki ke janak kise kaha jata hai?",
+      "gold_answer": "Gregor Mendel",
+      "gold_variants": [
+        "Mendel",
+        "Gregor Mendel",
+        "ग्रेगर मेंडल"
+      ],
+      "answer_type": "entity",
+      "id": "sci_007",
+      "domain": "Science",
+      "source": "Science textbooks / verified facts"
+    },
+    {
+      "en": "What is the powerhouse of the cell?",
+      "hi_dev": "कोशिका का पावरहाउस किसे कहा जाता है?",
+      "hi_rom": "Koshika ka powerhouse kise kaha jata hai?",
+      "gold_answer": "Mitochondria",
+      "gold_variants": [
+        "Mitochondria",
+        "माइटोकॉन्ड्रिया"
+      ],
+      "answer_type": "entity",
+      "id": "sci_008",
+      "domain": "Science",
+      "source": "Science textbooks / verified facts"
+    },
+    {
+      "en": "What is the chemical symbol for gold?",
+      "hi_dev": "सोने का रासायनिक प्रतीक क्या है?",
+      "hi_rom": "Sone ka rasaynik pratik kya hai?",
+      "gold_answer": "Au",
+      "gold_variants": [
+        "Au"
+      ],
+      "answer_type": "entity",
+      "id": "sci_009",
+      "domain": "Science",
+      "source": "Science textbooks / verified facts"
+    },
+    {
+      "en": "How many bones are in the adult human body?",
+      "hi_dev": "वयस्क मानव शरीर में कितनी हड्डियाँ होती हैं?",
+      "hi_rom": "Vayask manav sharir mein kitni haddiyan hoti hain?",
+      "gold_answer": "206",
+      "gold_variants": [
+        "206"
+      ],
+      "answer_type": "numeric",
+      "id": "sci_010",
+      "domain": "Science",
+      "source": "Science textbooks / verified facts"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+<title>ScriptConsist Annotation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one question per screen, phone-first; a compact progress strip on top, actions pinned at the bottom of the card. */
+:root{
+  --bg:#f3f4f7; --surface:#ffffff; --ink:#1d2333; --muted:#5d6577; --line:#dfe2ea;
+  --accent:#2f4a8a; --accent-ink:#ffffff; --accent-soft:#e6ebf6;
+  --ok:#2c7a5b; --ok-soft:#dcefe6; --warn:#a2650b; --warn-soft:#f7ead3; --bad:#b03a3a; --bad-soft:#f6dede;
+  --f-ui:"Hind","Noto Sans Devanagari",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12151d; --surface:#1b1f2a; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3242;
+  --accent:#8ea8e6; --accent-ink:#0f1422; --accent-soft:#25304a;
+  --ok:#6cc39d; --ok-soft:#1d3a2f; --warn:#e2ac57; --warn-soft:#3d3020; --bad:#e78484; --bad-soft:#3e2424;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151d; --surface:#1b1f2a; --ink:#e7e9ef; --muted:#9aa2b4; --line:#2c3242;
+  --accent:#8ea8e6; --accent-ink:#0f1422; --accent-soft:#25304a;
+  --ok:#6cc39d; --ok-soft:#1d3a2f; --warn:#e2ac57; --warn-soft:#3d3020; --bad:#e78484; --bad-soft:#3e2424;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5;margin:0}
+.wrap{max-width:640px;margin:0 auto;padding-block:16px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-size:1.15rem;font-weight:600;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:.9rem}
+button,.btn{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 14px;min-height:44px}
+button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+button.link{border:none;background:none;color:var(--accent);padding:6px 4px;min-height:auto;text-decoration:underline;text-underline-offset:3px}
+button:disabled{opacity:.5;cursor:default}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:18px}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.chip{background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:.8rem}
+.mono{font-family:var(--f-mono);font-size:.8rem}
+.field{display:flex;flex-direction:column;gap:6px}
+.label{font-weight:600;font-size:.95rem}
+.help{color:var(--muted);font-size:.85rem}
+.en{font-size:1rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+.hi-read{font-size:1.25rem;line-height:1.6}
+textarea,input[type=text]{font:inherit;font-size:1.05rem;width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--bg);color:var(--ink)}
+textarea{min-height:76px;resize:vertical}
+textarea.dev{font-size:1.2rem;line-height:1.6}
+.gold{background:var(--bg);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.gold b{font-size:1.05rem}
+.choices{display:flex;gap:8px;flex-wrap:wrap}
+.choices label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-height:44px;cursor:pointer}
+.choices input:checked + span{font-weight:600}
+.note{background:var(--warn-soft);color:var(--ink);border-radius:8px;padding:8px 12px;font-size:.9rem}
+.drop{display:flex;gap:8px;align-items:center}
+.msg{font-size:.9rem;min-height:1.2em}
+.msg.err{color:var(--bad)} .msg.ok{color:var(--ok)}
+.actions{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.actions .grow{flex:1 1 auto}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(22px,1fr));gap:4px}
+.strip button{min-height:22px;height:22px;padding:0;border-radius:4px;font-size:0;border:1px solid var(--line);background:var(--surface)}
+.strip button.done{background:var(--ok);border-color:var(--ok)}
+.strip button.dropped{background:var(--bad);border-color:var(--bad)}
+.strip button.cur{outline:2px solid var(--ink);outline-offset:1px}
+.sets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.sets button{min-height:36px;padding:6px 12px;font-size:.9rem;font-variant-numeric:tabular-nums}
+.sets button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.bar{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--ok);width:0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+summary{cursor:pointer;font-weight:600}
+details ul{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.picker{display:grid;gap:12px}
+.picker button{text-align:left;display:flex;flex-direction:column;gap:2px;padding:14px 16px}
+.picker button b{font-size:1.05rem}
+.empty{color:var(--muted);text-align:center;padding:32px 8px}
+.warn-inline{color:var(--warn);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>ScriptConsist annotation</h1>
+      <div class="sub" id="who">IndicQuest subset · Hindi + Romanized Hindi</div>
+    </div>
+    <button class="link" id="switchMode" hidden>Switch role</button>
+  </header>
+
+  <section id="picker" class="card" hidden>
+    <div class="field">
+      <span class="label">Who is annotating on this device?</span>
+      <span class="help">You can switch later. Each person's answers are saved separately.</span>
+    </div>
+    <div class="picker">
+      <button id="pickFull"><b>Full annotation</b><span class="help">Check the Hindi, type the Romanized version, check the answer. Mintaka 300 first (about 3 hours), then IndicQuest 81. Saves as you go.</span></button>
+      <button id="pickRom"><b>Romanized only (helper)</b><span class="help">Read each Hindi question and type it the way you'd text it. 60 Mintaka questions, about 30 minutes.</span></button>
+      <button id="pickVal"><b>Check model answers</b><span class="help">Mark whether each AI answer is right. 300 answers, about 1 hour. Checks the automatic scoring.</span></button>
+    </div>
+  </section>
+
+  <details id="rules">
+    <summary>How to annotate</summary>
+    <ul>
+      <li><b>Romanized Hindi:</b> type on your phone the way you'd send it on WhatsApp. Keep autocorrect on. Don't think about "correct" spelling and don't look anything up.</li>
+      <li>Mix in English words exactly as you normally would ("Constitution", "President", "state"). Don't force Hindi words you wouldn't actually type. The automatic version already covers pure Hindi.</li>
+      <li>Never add the answer or hints to the question.</li>
+      <li id="ruleHi"><b>Hindi (Devanagari):</b> Mintaka's Hindi is a professional translation, so change it only if it's clearly wrong. IndicQuest's Hindi is Google Translate: fix anything unnatural or wrong, keeping the meaning identical.</li>
+      <li id="ruleGold"><b>Answer check:</b> mark "Wrong" if the expected answer is incorrect, and type the right one. Mark "Unsure" rather than guessing.</li>
+    </ul>
+    <ul id="ruleVal" hidden>
+      <li><b>Correct:</b> the AI's answer gives the expected answer, or something that clearly means the same thing. Any language, script or spelling counts ("मार्क ट्वेन" = Mark Twain). Extra words or a full sentence are fine.</li>
+      <li>A shorter form counts if it clearly identifies the same thing ("Red Sox" for Boston Red Sox, "Hemingway" for Ernest Hemingway).</li>
+      <li><b>Wrong:</b> a different answer, several answers that disagree, no real answer, or an answer that only repeats the question.</li>
+      <li>For years, the year must match. For people, a different person with the same surname is wrong.</li>
+      <li>Judge only against the expected answer shown. Don't look anything up. Use <b>Unsure</b> if you can't tell.</li>
+    </ul>
+  </details>
+
+  <section id="progress" hidden>
+    <div class="sets" id="sets" role="group" aria-label="Question set"></div>
+    <div class="meta" style="justify-content:space-between"><span id="progText"></span><span class="mono" id="saveState"></span></div>
+    <div class="bar" style="margin-top:6px"><i id="progBar"></i></div>
+    <div class="strip" id="strip" style="margin-top:10px" aria-label="Jump to question"></div>
+  </section>
+
+  <section id="card" class="card"><div class="empty" id="loading">Loading questions…</div></section>
+
+  <div class="actions" id="exportRow" hidden>
+    <span class="help grow">If saving fails, copy your answers and send them to Aadeesh.</span>
+    <button id="copyBtn">Copy my answers</button>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const LS = { get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}} };
+  const S = { db:null, uid:null, canWrite:true, items:[], mine:{}, fullHi:{}, mode:LS.get("sc_mode"), set:LS.get("sc_set") || "mintaka", pos:0, shownAt:0, offline:false };
+  const SETS = { mintaka:"Mintaka", indicquest:"IndicQuest", retype:"To retype" };
+  S.retypeIds = new Set(); S.retypeOld = {};
+
+  function inSet(i, set){ return set === "retype" ? S.retypeIds.has(i.id) : (i.set || "indicquest") === set; }
+  function listFor(set){
+    if (S.mode === "validate") return set === S.set ? (S.vitems || []) : [];
+    return S.items.filter(i => inSet(i, set) && (S.mode !== "romanize" || i.subset));
+  }
+  function list(){ return listFor(S.set); }
+  function key(id){ return "sc_draft_" + S.mode + "_" + id; }
+
+  function statusOf(it, set){
+    if (S.mode === "validate") return (S.vmine || {})[it.id] ? "done" : "";
+    if ((set || S.set) === "retype"){
+      const m = S.mine[it.id];
+      if (S.retypeSince) return m && m.hi_rom_natural && (m.updated || "") > S.retypeSince ? "done" : "";
+      return m && m.hi_rom_natural && m.hi_rom_natural !== S.retypeOld[it.id] ? "done" : "";
+    }
+    const a = S.mine[it.id] || draft(it.id);
+    if (!a) return "";
+    if (a.drop) return "dropped";
+    return a.hi_rom_natural ? "done" : "";
+  }
+  function draft(id){ const v = LS.get(key(id)); try{ return v ? JSON.parse(v) : null }catch(e){ return null } }
+
+  function renderPicker(){
+    const show = !S.mode;
+    $("picker").hidden = !show;
+    $("switchMode").hidden = show;
+    $("ruleHi").hidden = S.mode === "romanize";
+    $("ruleGold").hidden = S.mode === "romanize";
+    const v = S.mode === "validate";
+    $("ruleVal").hidden = !v;
+    $("rules").querySelector("ul").hidden = v;
+    $("rules").querySelector("summary").textContent = v ? "How to judge answers" : "How to annotate";
+    if (v) $("rules").open = true;
+    $("who").textContent = v ? "Check model answers" : S.mode === "romanize" ? "Romanized only · helper" : S.mode === "full" ? "Full annotation" : "IndicQuest subset · Hindi + Romanized Hindi";
+  }
+
+  function renderProgress(){
+    const L = list();
+    if (!S.mode || !L.length){ $("progress").hidden = true; return; }
+    $("progress").hidden = false;
+    $("sets").replaceChildren(...Object.entries(SETS).filter(([k]) => S.mode !== "validate" && listFor(k).length).map(([k, label]) => {
+      const n = listFor(k), d = n.filter(it => statusOf(it, k)).length;
+      const b = el("button",{type:"button", class: k === S.set ? "on" : "", text:`${label} · ${d}/${n.length}`});
+      b.setAttribute("aria-pressed", String(k === S.set));
+      b.onclick = () => { S.set = k; LS.set("sc_set", k); S.pos = firstOpen(); renderCard(); renderProgress(); };
+      return b;
+    }));
+    const done = L.filter(it => statusOf(it)).length;
+    $("progText").textContent = `${done} of ${L.length} done`;
+    $("progBar").style.width = (100 * done / L.length) + "%";
+    const strip = $("strip");
+    strip.replaceChildren(...L.map((it, i) => {
+      const b = document.createElement("button");
+      b.className = statusOf(it) + (i === S.pos ? " cur" : "");
+      b.title = `Question ${i+1}`;
+      b.setAttribute("aria-label", `Question ${i+1}${statusOf(it) ? " (" + statusOf(it) + ")" : ""}`);
+      b.onclick = () => go(i);
+      return b;
+    }));
+  }
+
+  function el(tag, attrs={}, ...kids){
+    const e = document.createElement(tag);
+    for (const [k,v] of Object.entries(attrs)){
+      if (k === "class") e.className = v; else if (k === "text") e.textContent = v;
+      else if (k.startsWith("on")) e[k] = v; else e.setAttribute(k, v);
+    }
+    for (const k of kids) if (k) e.append(k);
+    return e;
+  }
+
+  function renderCard(){
+    const card = $("card");
+    const L = list();
+    if (!S.mode){ card.hidden = true; return; }
+    card.hidden = false;
+    if (!L.length){
+      card.replaceChildren(el("div",{class:"empty", text: S.offline
+        ? "Questions load from the shared store. Open this page while signed in to claude.ai."
+        : "No questions yet. Aadeesh's questions will appear here once they are loaded."}));
+      return;
+    }
+    S.pos = Math.max(0, Math.min(S.pos, L.length - 1));
+    const it = L[S.pos];
+    if (S.mode === "validate") return renderValCard(it, L);
+    const prev = S.mine[it.id] || draft(it.id) || {};
+    S.shownAt = Date.now();
+
+    const meta = el("div",{class:"meta"},
+      el("span",{text:`Question ${S.pos+1} of ${L.length}`}),
+      el("span",{class:"chip", text: it.domain}),
+      el("span",{class:"mono", text: it.id}));
+
+    const kids = [meta];
+    const devText = S.mode === "romanize" ? (S.fullHi[it.id] || it.hi_mt) : (prev.hi_dev || it.hi_mt);
+
+    if (S.mode === "full"){
+      kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"English (reference)"}), el("div",{class:"en", text: it.en})));
+      if (it.note) kids.push(el("div",{class:"note", text: "Note: " + it.note}));
+      const ta = el("textarea",{id:"f_dev", class:"dev", lang:"hi", rows:"3"}); ta.value = devText;
+      const pro = inSet(it, "mintaka");
+      const reset = el("button",{class:"link", type:"button", text: pro ? "Reset to original translation" : "Reset to Google Translate text", onclick:()=>{ ta.value = it.hi_mt; }});
+      kids.push(el("div",{class:"field"},
+        el("label",{class:"label", for:"f_dev", text: pro ? "Hindi question (professional translation)" : "Hindi question (Devanagari)"}),
+        el("span",{class:"help", text: pro ? "Only change it if something is clearly wrong." : "Fix unnatural or wrong wording. Keep the meaning identical."}), ta, reset));
+    } else {
+      kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"Hindi question"}), el("div",{class:"hi-read", lang:"hi", text: devText})));
+    }
+
+    const rom = el("textarea",{id:"f_rom", rows:"3", autocomplete:"off", autocorrect:"on", autocapitalize:"sentences", spellcheck:"true", placeholder:"e.g. India ka sabse bada state kaunsa hai?"});
+    rom.value = prev.hi_rom_natural || "";
+    const romWarn = el("span",{class:"warn-inline", id:"romWarn"});
+    rom.oninput = () => { romWarn.textContent = /[ऀ-ॿ]/.test(rom.value) ? "This has Devanagari letters. Type it in English letters." : ""; };
+    const clearRom = el("button",{class:"link", type:"button", text:"Clear and retype", onclick:()=>{ rom.value = ""; romWarn.textContent = ""; rom.focus(); }});
+    kids.push(el("div",{class:"field"},
+      el("label",{class:"label", for:"f_rom", text:"Type it the way you'd text it"}),
+      el("span",{class:"help", text:"Phone keyboard, autocorrect on, your own spelling. Use English words wherever you normally would."}), rom, romWarn, rom.value ? clearRom : null));
+
+    if (S.mode === "full"){
+      const g = el("div",{class:"gold"}, el("span",{class:"help",text:"Expected answer"}), el("b",{text: it.gold}));
+      if (it.variants && it.variants.length) g.append(el("span",{class:"help", text:"Also accepted: " + it.variants.join(", ")}));
+      const choice = (val, txt) => {
+        const inp = el("input",{type:"radio", name:"gold", value:val}); if (prev.gold_ok === val) inp.checked = true;
+        return el("label",{}, inp, el("span",{text:txt}));
+      };
+      const fix = el("input",{type:"text", id:"f_fix", placeholder:"Correct answer, with a source if you have one"}); fix.value = prev.gold_fix || "";
+      kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"Is the expected answer right?"}), g,
+        el("div",{class:"choices"}, choice("yes","Correct"), choice("no","Wrong"), choice("unsure","Unsure")), fix));
+
+      const drop = el("input",{type:"checkbox", id:"f_drop"}); drop.checked = !!prev.drop;
+      const why = el("input",{type:"text", id:"f_why", placeholder:"Why? (ambiguous, two answers, outdated…)"}); why.value = prev.drop_reason || "";
+      kids.push(el("div",{class:"field"}, el("label",{class:"drop"}, drop, el("span",{text:"Drop this question"})), why));
+    }
+
+    const msg = el("div",{class:"msg", id:"msg", role:"status"});
+    const back = el("button",{type:"button", text:"Back", onclick:()=>go(S.pos-1)}); if (S.pos === 0) back.disabled = true;
+    const save = el("button",{type:"button", class:"primary grow", text: S.pos === L.length-1 ? "Save" : "Save and next", onclick:()=>saveCurrent(it)});
+    kids.push(msg, el("div",{class:"actions"}, back, save));
+    card.replaceChildren(...kids);
+  }
+
+  function collect(it){
+    const a = { item: it.id, mode: S.mode, hi_rom_natural: $("f_rom").value.trim() };
+    if (S.mode === "full"){
+      a.hi_dev = $("f_dev").value.trim();
+      a.hi_dev_changed = a.hi_dev !== it.hi_mt.trim();
+      const g = document.querySelector('input[name="gold"]:checked'); a.gold_ok = g ? g.value : "";
+      a.gold_fix = $("f_fix").value.trim();
+      a.drop = $("f_drop").checked; a.drop_reason = $("f_why").value.trim();
+    }
+    return a;
+  }
+
+  async function saveCurrent(it){
+    const msg = $("msg");
+    const a = collect(it);
+    if (!a.drop){
+      if (!a.hi_rom_natural){ msg.className = "msg err"; msg.textContent = "Type the Romanized version first."; return; }
+      if (/[ऀ-ॿ]/.test(a.hi_rom_natural)){ msg.className = "msg err"; msg.textContent = "Romanized text should use English letters only."; return; }
+      if (S.mode === "full" && !a.gold_ok){ msg.className = "msg err"; msg.textContent = "Mark whether the expected answer is right."; return; }
+      if (S.mode === "full" && a.gold_ok === "no" && !a.gold_fix){ msg.className = "msg err"; msg.textContent = "Type the correct answer."; return; }
+    }
+    a.seconds = Math.round((Date.now() - S.shownAt) / 1000) + ((S.mine[it.id] && S.mine[it.id].seconds) || 0);
+    a.updated = new Date().toISOString();
+    LS.set(key(it.id), JSON.stringify(a));   // local backup first
+    if (S.db && S.uid && S.canWrite){
+      try{
+        a.annotator = S.uid;
+        await S.db.collection("annotations").doc(it.id + "__" + S.uid).set(a);
+        S.mine[it.id] = a;
+        $("saveState").textContent = "saved";
+      }catch(e){
+        if (e && e.code === "invalid_argument") S.canWrite = false;
+        $("saveState").textContent = "saved on this device only";
+        $("exportRow").hidden = false;
+      }
+    } else {
+      $("saveState").textContent = "saved on this device only";
+      $("exportRow").hidden = false;
+    }
+    renderProgress();
+    if (S.pos < list().length - 1) go(S.pos + 1);
+    else { msg.className = "msg ok"; msg.textContent = "Saved. That was the last question."; }
+  }
+
+  const FORM_NAME = { en:"English", hi_dev:"Hindi (Devanagari)", hi_rom_std:"Hindi in Roman letters (automatic)",
+                      hi_rom_natural:"Hinglish", hi_rom_second:"Hinglish" };
+  function renderValCard(it, L){
+    const card = $("card");
+    const prev = (S.vmine || {})[it.id] || {};
+    S.shownAt = Date.now();
+    const kids = [el("div",{class:"meta"}, el("span",{text:`Answer ${S.pos+1} of ${L.length}`}), el("span",{class:"mono", text: it.id}))];
+    kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"Question in English"}), el("div",{class:"en", text: it.en})));
+    if (it.form !== "en") kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"Asked as: " + (FORM_NAME[it.form] || it.form)}),
+                                       el("div",{class: it.form === "hi_dev" ? "hi-read" : "", lang: it.form === "hi_dev" ? "hi" : "en", text: it.asked})));
+    const g = el("div",{class:"gold"}, el("span",{class:"help",text:"Expected answer"}), el("b",{text: it.gold}));
+    if (it.variants && it.variants.length) g.append(el("span",{class:"help", text:"Also accepted: " + it.variants.join(", ")}));
+    kids.push(g);
+    const resp = el("div",{class:"gold"}, el("span",{class:"help",text:"AI's answer"}));
+    const pre = el("div",{text: it.response}); pre.style.whiteSpace = "pre-wrap"; pre.style.fontSize = "1.05rem";
+    resp.append(pre); kids.push(resp);
+    const choice = (val, txt) => {
+      const inp = el("input",{type:"radio", name:"verdict", value:val}); if (prev.verdict === val) inp.checked = true;
+      return el("label",{}, inp, el("span",{text:txt}));
+    };
+    kids.push(el("div",{class:"field"}, el("span",{class:"label",text:"Is the AI's answer right?"}),
+      el("div",{class:"choices"}, choice("correct","Correct"), choice("wrong","Wrong"), choice("unsure","Unsure"))));
+    const note = el("input",{type:"text", id:"v_note", placeholder:"Optional note"}); note.value = prev.note || "";
+    kids.push(note);
+    const msg = el("div",{class:"msg", id:"msg", role:"status"});
+    const back = el("button",{type:"button", text:"Back", onclick:()=>go(S.pos-1)}); if (S.pos === 0) back.disabled = true;
+    const save = el("button",{type:"button", class:"primary grow", text: S.pos === L.length-1 ? "Save" : "Save and next", onclick: async () => {
+      const c = document.querySelector('input[name="verdict"]:checked');
+      if (!c){ msg.className = "msg err"; msg.textContent = "Choose Correct, Wrong or Unsure."; return; }
+      const rec = { id: it.id, verdict: c.value, note: $("v_note").value.trim(), seconds: Math.round((Date.now() - S.shownAt)/1000),
+                    updated: new Date().toISOString() };
+      LS.set("sc_val_" + it.id, JSON.stringify(rec));
+      try { await S.db.collection("validation").doc(it.id).set(rec); S.vmine[it.id] = rec; $("saveState").textContent = "saved"; }
+      catch(e){ $("saveState").textContent = "saved on this device only"; $("exportRow").hidden = false; S.vmine[it.id] = rec; }
+      renderProgress();
+      if (S.pos < L.length - 1) go(S.pos + 1); else { msg.className = "msg ok"; msg.textContent = "Saved. That was the last one."; }
+    }});
+    kids.push(msg, el("div",{class:"actions"}, back, save));
+    card.replaceChildren(...kids);
+  }
+
+  function go(i){
+    const L = list(); if (!L.length) return;
+    S.pos = Math.max(0, Math.min(i, L.length - 1));
+    LS.set("sc_pos_" + S.mode + "_" + S.set, String(S.pos));
+    renderCard(); renderProgress();
+    window.scrollTo({top:0});
+  }
+
+  function firstOpen(){
+    const L = list(); const i = L.findIndex(it => !statusOf(it));
+    const saved = parseInt(LS.get("sc_pos_" + S.mode + "_" + S.set) || "", 10);
+    return Number.isFinite(saved) ? saved : Math.max(0, i);
+  }
+
+  function recomputeMine(){ S.mine = {}; for (const a of (S.myAll || [])) if (a.mode === S.mode) S.mine[a.item] = a; }
+  function setMode(m){ S.mode = m; LS.set("sc_mode", m || ""); recomputeMine(); renderPicker(); S.pos = firstOpen(); renderCard(); renderProgress(); }
+  const leaveVal = () => { if (S.set === "validate"){ S.set = "mintaka"; LS.set("sc_set", "mintaka"); } };
+  $("pickFull").onclick = () => { leaveVal(); setMode("full"); };
+  $("pickRom").onclick = () => { leaveVal(); setMode("romanize"); };
+  $("pickVal").onclick = () => { S.set = "validate"; LS.set("sc_set", "validate"); setMode("validate"); };
+  $("switchMode").onclick = () => setMode(null);
+
+  $("copyBtn").onclick = async () => {
+    const out = list().map(it => S.mine[it.id] || draft(it.id)).filter(Boolean);
+    const text = JSON.stringify({mode:S.mode, answers:out});
+    try{ await navigator.clipboard.writeText(text); $("copyBtn").textContent = "Copied"; }
+    catch(e){
+      const ta = el("textarea",{rows:"6"}); ta.value = text; $("exportRow").after(ta); ta.select();
+      $("copyBtn").textContent = "Select and copy the text below";
+    }
+  };
+
+  renderPicker();
+  if (S.mode) $("card").hidden = false;
+
+  (async () => {
+    const db = await claude.use("db");
+    const user = await claude.use("user");
+    if (!db){ S.offline = true; $("loading").textContent = "Open this page while signed in to claude.ai to load the questions."; return; }
+    S.db = db;
+    if (user){
+      S.uid = await user.id();
+      const cw = await user.can("data.write");
+      if (cw === false) S.canWrite = false;
+    }
+    if (!S.uid || !S.canWrite) $("exportRow").hidden = false;
+
+    let docItems = [], bundleItems = [];
+    const merge = () => {
+      S.items = [...docItems, ...bundleItems].sort((a,b) => a.order - b.order);
+      if (!S.rendered && list().length){ S.rendered = true; S.pos = firstOpen(); renderCard(); }
+      renderProgress();
+    };
+    const fail = () => { $("loading").textContent = "Couldn't load questions. Reload the page to try again."; };
+    db.collection("items").onSnapshot(snap => { docItems = snap.docs.map(d => ({id:d.id, ...d.data()})); merge(); }, fail);
+    S.vmine = {};
+    db.doc("vbundles/v1").onSnapshot(d => { S.vitems = d.exists ? (d.data().items || []) : []; merge(); }, () => {});
+    db.collection("validation").onSnapshot(snap => {
+      S.vmine = {}; for (const d of snap.docs) S.vmine[d.id] = d.data();
+      renderProgress();
+    }, () => {});
+    db.doc("config/retype").onSnapshot(d => {
+      const c = d.exists ? d.data() : {};
+      S.retypeIds = new Set(c.ids || []); S.retypeOld = c.old || {}; S.retypeSince = c.since || "";
+      merge();
+    }, () => {});
+    db.collection("bundles").onSnapshot(snap => {
+      bundleItems = snap.docs.flatMap(d => { const b = d.data(); return (b.items || []).map(it => ({set:b.set, ...it})); });
+      merge();
+    }, fail);
+
+    db.collection("annotations").onSnapshot(snap => {
+      const myAll = [], fullHi = {};
+      for (const d of snap.docs){
+        const a = d.data();
+        if (a.mode === "full" && a.hi_dev) fullHi[a.item] = a.hi_dev;
+        if (S.uid && a.annotator === S.uid) myAll.push(a);
+      }
+      S.myAll = myAll; S.fullHi = fullHi;
+      recomputeMine();
+      renderProgress();
+    });
+  })();
+})();
+</script>

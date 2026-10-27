@@ -1,0 +1,201 @@
+iq_index,domain,decision,reason,note,question_en
+0,Politics,keep,,,Whose death coincided with the launch of the non-cooperation movement in 1920?
+1,Politics,keep,,,Which Indian activist was popularly known as ‘Lokhitwadi’?
+2,Politics,drop,multi_part,,Who was the first president of india and the first president of USA ?
+3,Politics,drop,descriptive,,Who was Abdul Kalam? describe briefly.
+4,Politics,keep,,Piyush Goyal held interim charge briefly in 2019; Jaitley is the expected answer,Who was the finance minister of India during Modi's first term?
+5,Politics,drop,descriptive,,What are the educational qualifications of Narendra Modi ?
+6,Politics,drop,multi_part,,When was the disputed structure in Ayodhya demolished? How was the State. Government punished?
+7,Politics,keep,,Arts 54-55 both concern election; 54 is the standard answer,Which Article of the Constitution deals with the election of the President of India?
+8,Politics,keep,,,What is the number of Lok Sabha seats in Maharashtra ?
+9,Politics,drop,ambiguous,,Who proposed the Preamble before the Drafting Committee of the Constitution
+10,Politics,drop,multi_part,,Who was appointed Chief Justice of India in 1973? Why did this appointment become controversial?
+11,Politics,drop,contested,seat counts for 'Janata Party and allies' differ across sources,How many Lok Sabha seats were won by the Janata Party and its allies in the General Elections of March 1977?
+12,Politics,drop,temporal,,Who is the Chief Minister of Maharashtra as of 2024 ?
+13,Politics,keep,,,Which High court gave the verdict against the prime minister Indira Gandhi on 12th June 1975 and she lost her membership of the Loksabha 1971.
+14,Politics,drop,descriptive,,Explain the role played by Sardar Patel in the unification of princely states in India.
+15,Politics,drop,multi_part,,What were the election symbols of the Congress Party and Bharatiya Jana Sangh in the first general election of 1952?
+16,Politics,drop,temporal,,Where are the headquarters of Shiv Sena ?
+17,Politics,keep,,,Which was the only Indian state to have its own official flag?
+18,Politics,drop,multi_answer,,List the three political parties that dominate Punjab ?
+19,Politics,drop,temporal,,Who is the Health Minister of UP as of 2024 ?
+20,Politics,drop,temporal,,Which government is currently in power in MP as of 2024 ?
+21,Politics,keep,,question asks 'outcome'; scored on winning party,What was the Poll outcome of the UP assembly elections in 2007?
+22,Politics,keep,,,From which constituency was M. karunanidhi first elected to Tamil nadu Assembly ?
+23,Politics,drop,contested,,Who is considered as the first communist of South India
+24,Politics,drop,ambiguous,,Who was the founder of the most influential political party in Andhra Pradesh ?
+25,Politics,drop,multi_answer,,Mention the caste groups that dominate Karnataka's politics ?
+26,Politics,drop,multi_answer,"Kerala, West Bengal and Tripura all elected communist governments",Which state in India elected communists to power ?
+27,Politics,keep,,,How many divisions does Bihar have for administrative purposes ?
+28,Politics,drop,ambiguous,,What resulted in an influx of refugees in West Bengal ?
+29,Politics,keep,,explicitly anchored 'as of 2024'; TMC in power since 2011,Which is the predominant political party in West bengal as of 2024 ?
+30,Politics,keep,,,Which act provided for the election of a provincial legislative assembly in Orissa?
+31,Politics,keep,,,Who was the first female chief minister of Gujarat ?
+32,Politics,keep,,,Which party won a super majority in the 2022 Gujarat Legislative Assembly election?
+33,Politics,keep,,,Which party defeated the Indian National Congress in the 2012 Goa election?
+34,Politics,drop,ambiguous,,How many total constituencies are there in Gujarat?
+35,Politics,keep,,gold text truncated in source; verified externally,Who formed the Maharashtra Navnirman Sena?
+36,Politics,drop,descriptive,,"What was the key factor in the 2015 Bihar election, as identified by social historian Badri Narayan?"
+37,Politics,drop,descriptive,,What was the motivation behind the formation of the Indian National Developmental Inclusive Alliance (I.N.D.I.A.)?
+38,Politics,keep,,,How did Freedom House classify the state of Indian democracy in 2023?
+39,Politics,drop,multi_answer,,Under what law does the Election Commission operate?
+40,Geography,drop,descriptive,,Compare the climate of India and Brazil
+41,Geography,drop,descriptive,,Concentrated settlements are found in Narmada Valley because of
+42,Geography,drop,gold_mismatch,,Enlist the various institutional reform programmes introduced by the government in the interest of farmers.
+43,Geography,drop,gold_mismatch,,Describe the geographical conditions required for the growth of rice.
+44,Geography,drop,gold_error,India is not the leading tea producer (China) or exporter,India is the leading producer and exporter of ………….. in the world.
+45,Geography,keep,,,Yellow revolution refers to
+46,Geography,keep,,,Which position does India rank in terms of rice production in the world ?
+47,Geography,drop,descriptive,,Describe the distribution of coal in India.
+48,Geography,keep,,,Kodarma Gaya-Hazaribagh belt of Jharkhand is the leading producer of which minerals?
+49,Geography,keep,,,Which state is the oldest oil producing state in India?
+50,Geography,drop,contested,Chota Nagpur Plateau is usually called the richest mineral belt,The richest mineral belt of India is ………………
+51,Geography,drop,multi_answer,,Which minerals obtained from veins and lodes?
+52,Geography,drop,descriptive,,What was the aim of Chipko movement ?
+53,Geography,keep,,,Which Wildlife Protection Act has included for the first time the list of protected species of plants ?
+54,Geography,keep,,,Which soil is formed by intense leaching
+55,Geography,keep,,,On what basis is the industrial sector classified into public and private sectors?
+56,Geography,keep,,Kanpur is sometimes called 'Manchester of the East'; Ahmedabad is the standard answer,Which city is known as the Manchester of India ?
+57,Geography,drop,temporal,,The per capita consumption of steel in India is
+58,Geography,drop,multi_part,,Where do the rivers Indus and Ganga have their origin?
+59,Geography,drop,multi_answer,,Which two Peninsular rivers flow through trough?
+60,Geography,drop,multi_answer,,Which continents of today were part of the Gondwana land?
+61,Geography,drop,multi_answer,,Which two countries share the longest international border?
+62,Geography,drop,ambiguous,,What is the most densely populated city in the world?
+63,Geography,keep,,,Which among the following states is largest producer of Coffee in India?
+64,Geography,keep,,,Where on the earth is located the Sirohi Point?
+65,Geography,keep,,,India’s largest inland saline wetland system is located in which state?
+66,Geography,drop,ill_posed,,What percent of the total area of India is occupied by the river Ganga?
+67,Geography,keep,,,The river Alaknanda is originated from which glacier?
+68,Geography,keep,,,Which river feeds the Wular lake?
+69,Geography,keep,,Hindi source answer reverses the relation (MT error),Wheeler Island was the former name of which island?
+70,Geography,keep,,,Which is the only sanctuary where Kashmir stag is found?
+71,Geography,keep,,,The Biosphere Reserves Programme was launched in India in which year?
+72,Geography,keep,,,In which type of rock are fossils typically found?
+73,Geography,keep,,,“Medicine line” is another name of circle of latitude?
+74,Geography,keep,,,Chenab River also known as Chandrabhaga forms with the merging of Chandra and Bhaga Rivers near which place?
+75,Geography,keep,,,Which of the planet has length of its day and the tilt of its axis are almost identical to those of the earth?
+76,Geography,keep,,,Which is the world’s largest island country?
+77,Geography,drop,ill_posed,,What are valleys with a tributary to a larger river called?
+78,Geography,keep,,,The “Mabla Mountains” are located in which country?
+79,Geography,drop,ambiguous,,Where did the earliest plantation came up?
+80,History,keep,,,How much was the construction cost of Shaniwar Wada?
+81,History,drop,multi_part,,When did the reign of Chhatrapati Shahu Maharaj begin and when did it end?
+82,History,keep,,,Who established the Bahmani Sultanate?
+83,History,drop,multi_part,,"Who said to whom, ""Gad Aala Pan Sinha Gela""?"
+84,History,drop,descriptive,,What are the characteristics of the outer walls of Hemadpanti temples?
+85,History,keep,,,Who wrote the book 'Kitab-e-Navras'?
+86,History,keep,,,Who was the editor of the first Marathi paper 'Darpan'?
+87,History,drop,gold_error,"body was the Planning Commission, not 'Planning Board'",Which board was established by the Government of India in 1950 in which Prime Minister Pt. Jawaharlal Nehru was the Chairman?
+88,History,keep,,"low-resource fact; keep, flag in error analysis",Which ruler published the book 'Sabhaneeti' on politics?
+89,History,drop,gold_error,Gokhale founded the Servants of India Society (1905); Bharat Sevak Samaj is 1952,Who founded 'Bharat Sevak Samaj' in 1905?
+90,History,keep,,,What was the name of Savarkar's autobiography?
+91,History,keep,,,Who was the President of Amalner Mill Workers Union?
+92,History,keep,,source spells 'Rakhmabai Janardan Save',Who established the Red Cross Society in Rajkot?
+93,History,keep,,,Who presided over the first session of AITUC?
+94,History,drop,ambiguous,'Provisional Government of India' also names the 1915 Kabul government,Who was the head of the Provisional Government of India?
+95,History,keep,,,"Who prepared the plan to create two independent nations, India and Pakistan?"
+96,History,drop,multi_answer,both Maharashtra and Gujarat were formed on 1 May 1960,Which state was formed on 1 May 1960?
+97,History,keep,,,Which Gandhi memorial museum in Pune provides information about the history of Gandhiji?
+98,History,keep,,,A.D. Which city was conquered by the Ottoman Turks in 1453?
+99,History,drop,ambiguous,,Who tried to curb the illegal trade of the British?
+100,History,keep,,,"In 1802, which Peshwa signed a troop agreement with the British?"
+101,History,keep,,,Jamshedji Tata established the steel manufacturing plant of Tata Iron and Steel Company at which place?
+102,History,keep,,,Which author wrote the book Gitarahasya?
+103,History,keep,,,Rabindranath Tagore renounced which title given by the government to protest the Jallianwala Bagh massacre?
+104,History,keep,,Hindi source mistranslates 'president' as राष्ट्रपति,"Which Bhosale president signed the ""Treaty of Nagpur"" with the British?"
+105,History,keep,,,"In which year Ahmednagar fort was captured by General Wellesley, promoting British power in the region?"
+106,History,keep,,,Shivaji Maharaj was coronated in which year?
+107,History,keep,,,Khandesh region was captured by Mughal Emperor Akbar in which year?
+108,History,keep,,,Who defeated Marathas in the third battle of Panipat?
+109,History,keep,,,Which Maratha king's court poet composed the heroic epic Shivabharata?
+110,History,keep,,,The Wadgaon Agreement or Pact was concluded between which war?
+111,History,drop,multi_answer,,"During the reign of Sher Shah, revenue accounts were in which languages?"
+112,History,keep,,,Gavilgarh fort was built by which king in AD 1425?
+113,History,keep,,,The words “Satyameva Jayate” in the State Emblem adopted by the Government of India have been taken from which Upanishad?
+114,History,drop,descriptive,,How did the Maurya Empire finally end?
+115,History,keep,,,In which caves is the Kailasha temple located?
+116,History,keep,,,"When did the Lahore Congress, under the presidency of Jawaharlal Nehru, formalise the demand of ‘Purna Swaraj’ or full independence for India?"
+117,History,keep,,,Which Anglo - Maratha wars resulted in merging the Peshwas' territories with the Bombay Presidency?
+118,History,keep,,,The Gandhi — Irwin Pact was associated to which of the following movements of India?
+119,History,drop,descriptive,,Describe the significance of the Battle of Kharda in the history of the Maratha Empire.
+120,Literature,drop,descriptive,,How does Joyce use stream-of-consciousness in Ulysses?
+121,Literature,drop,descriptive,,Analyze the significance of the green light in The Great Gatsby.
+122,Literature,drop,descriptive,,What role does setting play in Wuthering Heights?
+123,Literature,drop,descriptive,,How does Shakespeare subvert gender roles in Hamlet?
+124,Literature,drop,descriptive,,Analyze the symbolism of the eye in Lord of the Flies.
+125,Literature,drop,descriptive,,Discuss the concept of unreliable narrator in Lolita.
+126,Literature,drop,gold_error,gold answer does not match the novel,What does Aunt Polly use to test if Tom has washed behind his ears?
+127,Literature,drop,descriptive,,What does Injun Joe do to Dr. Robinson?
+128,Literature,drop,descriptive,,How did Hamlet's father die?
+129,Literature,drop,descriptive,,What is the difference between a motif and a symbol?
+130,Literature,drop,descriptive,,"Define the term ""dramatic irony."""
+131,Literature,drop,descriptive,,What is the significance of the Bildungsroman genre?
+132,Literature,drop,descriptive,,How does setting contribute to the atmosphere of a literary work?
+133,Literature,drop,descriptive,,"Explain the concept of ""stream of consciousness"" narration."
+134,Literature,drop,descriptive,,What is the role of the unreliable narrator in literature?
+135,Literature,drop,descriptive,,How does intertextuality enrich a literary work?
+136,Literature,drop,descriptive,,"Define the term ""foil character."""
+137,Literature,drop,descriptive,,What is the difference between tragedy and comedy?
+138,Literature,drop,descriptive,,"Explain the concept of ""catharsis"" in dramatic literature."
+139,Literature,drop,descriptive,,What is the purpose of foreshadowing in a narrative?
+140,Literature,drop,descriptive,,How is alliteration used to create a specific effect in poetry?
+141,Literature,drop,descriptive,,Explain the structure of a sonnet
+142,Literature,drop,descriptive,,"Define the term ""personification."""
+143,Literature,drop,contested,,"Who is considered the ""Father of Indian English Literature""?"
+144,Literature,keep,,,Name the epic poem written by Valmiki.
+145,Literature,drop,descriptive,,What is the significance of the Bhakti movement in Indian literature?
+146,Literature,keep,,,Which Indian author won the Nobel Prize in Literature?
+147,Literature,drop,descriptive,,"What is the central theme of Rabindranath Tagore's ""Gitanjali""?"
+148,Literature,drop,descriptive,,"What is the significance of the ""Bakhar"" genre in Marathi literature?"
+149,Literature,drop,ambiguous,,Name a famous Marathi poet known for his patriotic and social themes.
+150,Literature,drop,unverifiable,,Which Marathi novel explores the social and political issues of the British Raj?
+151,Literature,drop,unverifiable,could not verify a Marathi novel 'Manini' or its author,"Who is the author of the Marathi novel ""Manini""?"
+152,Literature,drop,descriptive,,"What is the main theme of the Bengali novel ""Gora"" by Rabindranath Tagore?"
+153,Literature,keep,,source calls it a 'novel'; it is an epic. Answer unaffected,"Who is the author of the Tamil novel ""Silappadhikaram""?"
+154,Literature,drop,ambiguous,,Name a famous Malayalam poet known for his works on nature and spirituality.
+155,Literature,drop,descriptive,,"What is the significance of the ""Premchand Era"" in Hindi literature?"
+156,Literature,keep,,,"Who is the author of the Kannada novel ""Vamsavriksha""?"
+157,Literature,drop,descriptive,,What is the significance of the Indian New Wave movement in literature?
+158,Literature,drop,descriptive,,"What is the theme of Arundhati Roy's novel ""The God of Small Things""?"
+159,Literature,drop,descriptive,,What is the significance of the Dalit literature movement in India?
+160,Economics,drop,descriptive,,Define GDP. Explain its components and limitations as a welfare measure.
+161,Economics,drop,descriptive,,What causes inflation? Discuss its effects and policy responses.
+162,Economics,drop,descriptive,,"Define unemployment. Analyze its types, causes, and policy solutions."
+163,Economics,drop,descriptive,,Explain the balance of payments. Discuss its components and factors affecting it.
+164,Economics,drop,descriptive,,What is fiscal policy? Explain its tools and effectiveness in stabilizing
+165,Economics,drop,descriptive,,Define elasticity. Explain its types and importance in economic decisions.
+166,Economics,drop,descriptive,,Explain perfect competition. Analyze short-run and long-run equilibrium.
+167,Economics,drop,descriptive,,"Define monopoly. Explain its characteristics, pricing, and social costs."
+168,Economics,drop,descriptive,,Define oligopoly. Explain its characteristics and pricing strategies.
+169,Economics,drop,descriptive,,What are externalities? Differentiate between positive and negative externalities and their implications.
+170,Economics,keep,,Pune is also occasionally called this; Chennai is standard,Which city is called “Detroit of India” for its automobiles industry?
+171,Economics,drop,answer_leak,"Hindi MT renders ad valorem as मूल्यानुसार ('according to value'), leaking the answer in Devanagari only",The Ad Valorem Tax is applied for what?
+172,Economics,drop,ill_posed,,The Lead Bank Scheme was finalised to adopt a which intensive development?
+173,Economics,keep,,,"In which year, Planning Commission was set up?"
+174,Economics,keep,,stable for decades; not explicitly dated,Which state has the highest Gross State Domestic Product(GSDP) in India?
+175,Economics,keep,,,Which organization launched the School Education Quality Index?
+176,Economics,drop,descriptive,,What is Bank Rate?
+177,Economics,drop,ambiguous,,What is a fixed cost to a manufacturing firm in short-run?
+178,Economics,keep,,,What is the total income support provided annually under Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) Scheme?
+179,Economics,keep,,,What are the reserves maintained by commercial banks with the Reserve Bank of India over and above the statutory minimum called?
+180,Economics,drop,descriptive,,Explain the concept of black money.
+181,Economics,drop,ill_posed,,"According to the Economic Survey of Maharashtra for 2016-17,which State had the highest growth of GSDP?"
+182,Economics,drop,multi_answer,,What does setting up of Agriculture Produce Marketing Committees (APMC) include?
+183,Economics,drop,gold_error,"agriculture, not services, is India's largest employer",Which sector is the largest employment-generating and fastest-growing sector of the economy?
+184,Economics,drop,multi_answer,,What innovative schemes were implemented to increase adult literacy in the Maharashtra?
+185,Economics,keep,,,What is the investment made by foreign companies in our country called?
+186,Economics,drop,gold_error,,What causes frictional employment?
+187,Economics,keep,,scheme 1972; the EGS Act followed in 1977,When was Employment Guarantee Scheme (EGS) introduced in Maharashtra?
+188,Economics,drop,descriptive,,What is benchmarking in economics?
+189,Economics,drop,multi_part,,What is FERA and when was it introduced?
+190,Economics,drop,temporal,,What was India's GDP growth rate in the fiscal year 2023-2024?
+191,Economics,drop,descriptive,,Mention briefly some of the emerging trends in consumption patterns in India?
+192,Economics,drop,descriptive,,What is the primary driver of India's economy?
+193,Economics,drop,multi_answer,,Which is the major challenge for Indian economy?
+194,Economics,drop,temporal,,What percentage of India's GDP does agriculture account for?
+195,Economics,keep,,,What is the nature of India's economy?
+196,Economics,drop,descriptive,,How did India respond to the global financial crisis of 2008?
+197,Economics,drop,multi_part,,How does India rank in the world economy by nominal GDP and PPP as of 2024?
+198,Economics,drop,gold_error,savings rates deregulated in 2011; banks set them,Who is responsible for determining the interest rate of Savings Bank Accounts in India?
+199,Economics,drop,descriptive,,What was the success rate of demonetization in terms of removing black money?

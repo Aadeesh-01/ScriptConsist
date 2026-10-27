@@ -1,0 +1,375 @@
+{
+ "stats": {
+  "n_items": 73,
+  "identical": 5,
+  "mean_char_similarity": 0.849,
+  "mean_word_jaccard": 0.66
+ },
+ "pairs": [
+  {
+   "item": "iq_045",
+   "second_speaker": "Yellow Revolution kisko refer karta hai?",
+   "first_author": "Yellow Revolution kisk ko refer karta hai?"
+  },
+  {
+   "item": "iq_049",
+   "second_speaker": "India ka oldest oil-producing state konsa hai?",
+   "first_author": "India ka sabse oldest oil-producing state kaunsa hai?"
+  },
+  {
+   "item": "iq_054",
+   "second_speaker": "Intense leaching ke bad konsi soil banti hai?",
+   "first_author": "Intense leaching se konsi soil banti hai?"
+  },
+  {
+   "item": "iq_055",
+   "second_speaker": "kis ke basis pe industrial sector ko public and private sectors mein classify karte hai?",
+   "first_author": "Kis ke basis par industrial sector ko public and private sectors mein classify karte hai?"
+  },
+  {
+   "item": "iq_056",
+   "second_speaker": "Kaunsi city ko Manchester of India bhi kehte hain?",
+   "first_author": "Kaunsi city ko Manchester of India kehte hain?"
+  },
+  {
+   "item": "iq_065",
+   "second_speaker": "India ka largest inland saline wetland system kaunse state mein hai?",
+   "first_author": "India ka largest inland saline wetland system kis state mein hai?"
+  },
+  {
+   "item": "iq_071",
+   "second_speaker": "India mein The Biosphere Reserves Programme kaunse saal mein launch hua tha?",
+   "first_author": "India mein The Biosphere Reserves Programme kis saal mein launch hua tha?"
+  },
+  {
+   "item": "iq_088",
+   "second_speaker": "'Sabhaneet' kitab kis ruler ne likhi thi?",
+   "first_author": "'Sabhaneet' book kis ruler ne likhi thi?"
+  },
+  {
+   "item": "iq_091",
+   "second_speaker": "Amalner Mill Workers Union ka president kaun tha?",
+   "first_author": "Amalner Mill Workers Union ka president kaun tha?"
+  },
+  {
+   "item": "iq_092",
+   "second_speaker": "Rajkot ki Red Cross Society kisne establish ki thi?",
+   "first_author": "Rajkot mein Red Cross Society kisne establish kari thi?"
+  },
+  {
+   "item": "iq_102",
+   "second_speaker": "Gitarahasya book kisne likhi thi?",
+   "first_author": "Gitarahasya book ka author kon tha?"
+  },
+  {
+   "item": "iq_104",
+   "second_speaker": "\"Treaty of Nagpur\" kise Bhosale president ne British ke sath sign ki thi?",
+   "first_author": "kise Bhosale president ne British ke sath \"Treaty of Nagpur\" sign ki thi?"
+  },
+  {
+   "item": "iq_106",
+   "second_speaker": "Kaunse saal mein Shivaji Maharaj ka coronation hua tha?",
+   "first_author": "Shivaji Maharaj ka coronation kaunse saal mein hua tha?"
+  },
+  {
+   "item": "iq_107",
+   "second_speaker": "Mughal Emperor Akbar ne kaunse saal mein Khandesh region ko capture kiya tha?",
+   "first_author": "Mughal Emperor Akbar ne kise saal mein Khandesh region ko capture kiya tha?"
+  },
+  {
+   "item": "iq_118",
+   "second_speaker": "Gandhi-Irwin Pact kaunse Indian movements ke sath associated tha?",
+   "first_author": "Gandhi-Irwin Pact kaunse Indian movements se associated tha?"
+  },
+  {
+   "item": "iq_170",
+   "second_speaker": "kis city ko uski automobile industry ke liye \"Detroit of India\" bhi bolte hai?",
+   "first_author": "Kis Indian city ko uski automobile industry ke liye \"Detroit of India\" bhi bolte hain?"
+  },
+  {
+   "item": "iq_178",
+   "second_speaker": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) Scheme annually kitna income support provide karti hai?",
+   "first_author": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) Scheme annually kitna income support provide karti hai?"
+  },
+  {
+   "item": "iq_187",
+   "second_speaker": "Maharashtra mein Employment Guarantee Scheme (EGS) kab introduce kari thi?",
+   "first_author": "Maharashtra mein Employment Guarantee Scheme (EGS) kab introduce kara tha?"
+  },
+  {
+   "item": "iq_195",
+   "second_speaker": "India ki economy ka nature kis type ka hai?",
+   "first_author": "India ki economy ka nature kis type ka hai?"
+  },
+  {
+   "item": "mk_000c89ac",
+   "second_speaker": "England ki sabse purani university konsi hai?",
+   "first_author": "England ki oldest university konsi hai?"
+  },
+  {
+   "item": "mk_11dd3a69",
+   "second_speaker": "1908 me olympic me male ki Springboard diving gold medal winner kiss desh se tha?",
+   "first_author": "1908 me olympic mein male ki Springboard diving mein gold medal winner kis country se tha?"
+  },
+  {
+   "item": "mk_1f20ce07",
+   "second_speaker": "Washington Monument kis type ka monument hai?",
+   "first_author": "Washington Monument ki type ka monument hai?"
+  },
+  {
+   "item": "mk_2023d048",
+   "second_speaker": "Sahara Desert ka kuch hissa rakhne wala sabse chhota desh kaunsa hai?",
+   "first_author": "smallest country jiske paas Sahara Desert ka part hai>"
+  },
+  {
+   "item": "mk_26b65c8b",
+   "second_speaker": "Konsi Mexico ki archaeological site ko Seven Wonders mai include kiya tha 2007 mai ?",
+   "first_author": "Kunsi Mexico ki archaeological site ko 2007 mein Seven Wonders of the World mein include kiya tha?"
+  },
+  {
+   "item": "mk_270aa5b6",
+   "second_speaker": "Kaunsa desh har saal sabse zyada rainfall receive karta hai aur jiski population lagbhag 5 crore hai?",
+   "first_author": "Kaunse country mein sabse jada yearly rainfall hoti hai aur approximately 50 million people hai?"
+  },
+  {
+   "item": "mk_286dbe53",
+   "second_speaker": "2020-21 ke liye english premier league golden boot ka vijeta kiss team ke liye khelta hai?",
+   "first_author": "2020-21 ke English Premier League golden boot ka winner kis team ke liye khelta hai?"
+  },
+  {
+   "item": "mk_2c148c6e",
+   "second_speaker": "Kitty Hawk me sabse pehle konse bhai ude the?",
+   "first_author": "Kitty Hawk me first konse brothers ude the?"
+  },
+  {
+   "item": "mk_2ea36164",
+   "second_speaker": "Konsi nadi china mai behti hai aur china ki sabse badi nadi hai ?",
+   "first_author": "Konsi river China mein behti hai aur China ki sabse badi nadi hai ?"
+  },
+  {
+   "item": "mk_2f7bc394",
+   "second_speaker": "Salem Massachusetts ki sthapna kis saal hui thi?",
+   "first_author": "Salem, Massachusetts ko kaunse saal mein founded kiya gaya?"
+  },
+  {
+   "item": "mk_317f9675",
+   "second_speaker": "US ki second sabse lambi river konsi hai?",
+   "first_author": "U.S. ki second longest river kaunso hai"
+  },
+  {
+   "item": "mk_3c26ab04",
+   "second_speaker": "Miami konse saal mai found hui thi ?",
+   "first_author": "Miami kis saal founded hua tha?"
+  },
+  {
+   "item": "mk_3c69e08f",
+   "second_speaker": "Europe me fourth largest country konsi hai?",
+   "first_author": "Europe ki fourth largest country konsi hai?"
+  },
+  {
+   "item": "mk_3ebd7533",
+   "second_speaker": "Mount Rushmore kaha pe hai?",
+   "first_author": "Mount Rushmore kahan pe located hai?"
+  },
+  {
+   "item": "mk_3ee1aaa5",
+   "second_speaker": "Konse saal Buffalo Bills tisra Super Bowl hare the?",
+   "first_author": "Konse saal Buffalo Bills third Super Bowl hare the?"
+  },
+  {
+   "item": "mk_42641e97",
+   "second_speaker": "Kaunsa U.S. state hai jahan ki population poore Canada se bhi zyada hai aur jahan ek famous golden bridge bhi hai?",
+   "first_author": "Kaunsa U.S. state hai jiski population poore Canada se bhi zyada hai aur jahan ek famous Golden Bridge bhi hai?"
+  },
+  {
+   "item": "mk_45372bae",
+   "second_speaker": "Ichiro Suzuki konsi team ke liye aakhri baar khele the?",
+   "first_author": "Ichiro Suzuki ne kaunsi team ke liye last baar khelq tha?"
+  },
+  {
+   "item": "mk_591687db",
+   "second_speaker": "2020 MotoGP world cup championship ka winner kiss desh ka tha?",
+   "first_author": "2020 MotoGP World Cup Championship ka winner kiss country ka tha?"
+  },
+  {
+   "item": "mk_59bf61bc",
+   "second_speaker": "US ke kis state ke liye Mexican American War lada gaya tha?",
+   "first_author": "US ke kaunse state ke liye Mexican American War lada gaya tha?"
+  },
+  {
+   "item": "mk_5f81dce2",
+   "second_speaker": "2009 world series ko jitne wali team ka captain kon tha?",
+   "first_author": "2009 World Series ki winning team ka captain kon tha?"
+  },
+  {
+   "item": "mk_604c8f17",
+   "second_speaker": "Love ki Greek Goddess kon hai?",
+   "first_author": "Greek ki Love Goddess kon hai?"
+  },
+  {
+   "item": "mk_628e5dfa",
+   "second_speaker": "Green bay Packers ne apna last Super Bowl kab jita tha?",
+   "first_author": "Green bay Packers ne last baar Super Bowl kab jita tha?"
+  },
+  {
+   "item": "mk_6687d043",
+   "second_speaker": "Ancient Egypt me kis important janwar ko bohot respect aur pyaar kiya jata tha?",
+   "first_author": "Ancient Egypt me kis important janwar ko bohot respect aur pyaar diya jata tha?"
+  },
+  {
+   "item": "mk_67b724c9",
+   "second_speaker": "Major league baseball me sabse zyada titles kiske pass hai?",
+   "first_author": "Major league baseball me sabse zyada titles kis team ke pass hai?"
+  },
+  {
+   "item": "mk_698442dc",
+   "second_speaker": "World me kis country me sabse jyada fresh water hai?",
+   "first_author": "World me kaunsi country me sabse jyada fresh water hai?"
+  },
+  {
+   "item": "mk_6a6a80cf",
+   "second_speaker": "Staples Center me khelne wali konsi team hai jisme Dennis Schroeder khelte the?",
+   "first_author": "Staples Center me khelne wali team kuansi hai jisme Dennis Schröder khelte the?"
+  },
+  {
+   "item": "mk_6cdf80c2",
+   "second_speaker": "Konsi nadi Egypt ko cut karti hai entirety, aur sabse badi nadi hai world ki ?",
+   "first_author": "Kaunsi river Egypt ko entirely cut karti hai, aur world ki sabse badi river hai world ki?"
+  },
+  {
+   "item": "mk_81fc800d",
+   "second_speaker": "Konsi city duniya ki sabse choti city hai by geographical area",
+   "first_author": "geographical area ke hisab se kaunsi city sabse smallest hai?"
+  },
+  {
+   "item": "mk_85588ff9",
+   "second_speaker": "Kiss basketball team se 2021 me Lebron James khele aur 2020 ki championship jite the?",
+   "first_author": "Kaunsi basketball team se 2021 mein LeBron James khele aur 2020 ki championship jeeti?"
+  },
+  {
+   "item": "mk_8ca556e8",
+   "second_speaker": "Konsi city ko The big Easy bhi kehte hai?",
+   "first_author": "Kis city ka nickname The Big Easy hai?"
+  },
+  {
+   "item": "mk_8e797e4c",
+   "second_speaker": "American Civil War ke zyadaatar time tak president rehne wale president se pehle kaun president tha?",
+   "first_author": "American Civil War ke dauran majority time tak president rehne wale president se pehle kaun president tha?"
+  },
+  {
+   "item": "mk_8ea9d5a4",
+   "second_speaker": "NBA me konsi team sabase zyada regular season wins ka record rakhti hai?",
+   "first_author": "NBA me konsi team ke paas sabse jada regular season wins ka record hai?"
+  },
+  {
+   "item": "mk_906b8b7f",
+   "second_speaker": "Abraham Lincoln's ke hatyare ka pesha kya tha?",
+   "first_author": "Abraham Lincoln ke assassin ka occupation kya tha?"
+  },
+  {
+   "item": "mk_936b9eaa",
+   "second_speaker": "World War II ke war crimes ke liye trails kaunse city mein hui thi?",
+   "first_author": "World War II ke war crimes ke liye trails kaunse city mein hue the?"
+  },
+  {
+   "item": "mk_9624c10b",
+   "second_speaker": "Duniya ke sabse bade land area wale desh ki rajdhani kya hai?",
+   "first_author": "world ki biggest land area wali country ka capital kya hai?"
+  },
+  {
+   "item": "mk_97be38c6",
+   "second_speaker": "Germany ki sabse zayda populated city konsi hai?",
+   "first_author": "Germany ki sabse populated city konsi hai?"
+  },
+  {
+   "item": "mk_a04db7b1",
+   "second_speaker": "Tower of London ke White Tower ka nirmaan kab hua tha?",
+   "first_author": "the white tower of the Tower of London kab build hua tha?"
+  },
+  {
+   "item": "mk_a5a3bab2",
+   "second_speaker": "Konsi team sabase pehla Super Bowl jiti thi?",
+   "first_author": "First Super Bowl kaunsi team ne jita tha?"
+  },
+  {
+   "item": "mk_aae0225d",
+   "second_speaker": "Rhine River jis sabse chhote desh se hokar behti hai, woh kaunsa desh hai?",
+   "first_author": "Rhine River kaunse sabse chhote country se flow karti hai?"
+  },
+  {
+   "item": "mk_ac917347",
+   "second_speaker": "World ka sixth longest river system konsa hai?",
+   "first_author": "World mein sixth longest river system konsi hai?"
+  },
+  {
+   "item": "mk_b50c1613",
+   "second_speaker": "Ancient Greece ka main sea konsa tha?",
+   "first_author": "Ancient Greece ka main sea konsa tha?"
+  },
+  {
+   "item": "mk_bd7178fb",
+   "second_speaker": "Population ke according fourth largest continent konsa hai?",
+   "first_author": "By population, fourth largest continent kaunsi hai?"
+  },
+  {
+   "item": "mk_c3434586",
+   "second_speaker": "Hall of fame ka manager earl weaver kaha mara tha?",
+   "first_author": "Hall of Fame ke manager Earl Weaver ki death kahan hui thi?"
+  },
+  {
+   "item": "mk_cf30946f",
+   "second_speaker": "North America continent ki sabse lambi mountain range kaunsi hai, jahan North America ka sabse zyada visit kiya jaane wala glacier bhi hai?",
+   "first_author": "North America continent ka sabse longest mountain range kaunsa hai, jahan North America ka sabse jada visited glacier hai?"
+  },
+  {
+   "item": "mk_d5bde6cd",
+   "second_speaker": "South America ka highest mountain konsa hai?",
+   "first_author": "South America ka highest mountain kaunsa hai?"
+  },
+  {
+   "item": "mk_d65cbdec",
+   "second_speaker": "America ke third president ke virginia ke ghar ka kya nam tha?",
+   "first_author": "America ke third president ke virginia ke ghar ka kya nam tha?"
+  },
+  {
+   "item": "mk_e0fcadd4",
+   "second_speaker": "Konsi City ko Big Apple bhi kehte hai ?",
+   "first_author": "Kaunsi city ko Big Apple se bhi refer karte hain?"
+  },
+  {
+   "item": "mk_e2a0bfc0",
+   "second_speaker": "Outfield me konsi team ke pass Green Monster hai ?",
+   "first_author": "Outfield mein kaunsi team ke pass Green Monster hai?"
+  },
+  {
+   "item": "mk_ed149b18",
+   "second_speaker": "Super Bowl 31 jitne wali team ka quarterback kon tha?",
+   "first_author": "Super Bowl 31 jitne wali team ka quarterback kaun tha?"
+  },
+  {
+   "item": "mk_eec070b6",
+   "second_speaker": "Konsa state USA ka largest area hold karta hai aur highest mountain bhi isi state mai hai ?",
+   "first_author": "Kaunsa state U.S. ka largest area hold karta hai aur highest mountain bhi isi state mai hai?"
+  },
+  {
+   "item": "mk_f0c2d44f",
+   "second_speaker": "Han Dynasty ke samay China ke famous commerce path ka naam kya tha?",
+   "first_author": "Han Dynasty ke time paar China ka famous commerce path ka naam kya tha?"
+  },
+  {
+   "item": "mk_f11ace0d",
+   "second_speaker": "67 saal ki umar me mona lisa aur the last supper die ke painter ki maut konse saal me hui thi?",
+   "first_author": "67 saal ki age mein Mona Lisa aur The Last Supper die ke painter ki daeth konse saal me hui thi?"
+  },
+  {
+   "item": "mk_f19141af",
+   "second_speaker": "America ka sabse bada state kaunsa hai jahan hamesha thand rehti hai?",
+   "first_author": "America ka kaunsa biggest state hai joh always thand rehta hai?"
+  },
+  {
+   "item": "mk_f7c30a3a",
+   "second_speaker": "United States of America ke kis president ki tisre president ke sath dushmani thi?",
+   "first_author": "United States ke kis president ki third president ke sath rivalry thi?"
+  }
+ ]
+}

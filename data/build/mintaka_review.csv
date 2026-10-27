@@ -1,0 +1,63 @@
+position,id,status,reason,en,hi_rom_natural
+3,mk_3c7bf020,rejected,"review: ambiguous: started writing 1990, published 1997",When did J. K. Rowling write Harry Potter?,J. K. Rowling ne Harry Potter kab likhi thi?
+24,mk_a0f0b3c7,rejected,review: two adaptations: Swedish (Nyqvist) and US (Craig),Who was the male lead in the movie adaptation of the first Millennium series novel by Stieg Larsson?,Stieg Larsson ki Millennium series ki pehli novel par based movie adaptation mein male lead kaun tha?
+32,mk_c912e84e,rejected,review: duplicate of 27,When did the first Twilight book come out?,Twilight ki first book kab publish hui thi ?
+33,mk_f1acfbff,rejected,review: duplicate of 27,When was the first book in the Twilight series released?,Twilight series ki first book kab release hui thi?
+34,mk_1314d426,rejected,review: vague ('most awards'),What author has won the most awards?,Kaunse author ne most awards jeete hain?
+36,mk_6b6f1571,rejected,review: contradicts item 36; page counts vary by edition,What's the longest book by J.R.R. Tolkien by pages?,By pages J.R.R. Tolkien ki kaunsi book sabse lambi hai?
+37,mk_ab44eb07,rejected,review: contradicts item 35; page counts vary by edition,Which LOTR book was the shortest in page count?,Konsi LOTR book sabse kam page wali hai?
+38,mk_b2a3e1c7,rejected,review: duplicate of 34,What is the longest Harry Potter book?,Harry Potter ki sabse lambi book kaunsi hai?
+45,mk_59bcc7a0,rejected,review: two answers: Venice and Amsterdam,Which city is entirely built on long wooden poles?,Kaunsi city sirf lambe wooden poles par bani hui hai?
+46,mk_68a92f48,rejected,review: census rank changes over time,What is the ninth largest city by population in the United States?,population-wise kaunsi US ki kaunsi city 9th rank karti hai?
+53,mk_f8ff6618,rejected,review: ambiguous: Shanghai vs Chongqing (municipality); Hinglish also omits 'China',What is the biggest city by population in China?,Konsi city sabse badi hai population wise
+62,mk_a014ccdd,rejected,review: two answers: Everest is on the Nepal-China border (Kathmandu / Beijing),What is the capital of the country where Mount Everest is located?,Mount Everest jo country mai located hai uski capital kya hai ?
+65,mk_fbdcdd16,rejected,"review: record changed: Melbourne overtook Sydney (2023, ABS)",What is the largest city by population located in the world's smallest continent?,World ke sabse chote continent ki population ke according sabse badi city konsi hai?
+68,mk_72c5d3c0,rejected,review: record changed: Melbourne vs Sydney (2023),What is the name of the second largest city in Australia?,Australia ki second sabse badi city ka naam kya hai?
+69,mk_8efc069f,rejected,"review: sources disagree (Mackenzie, Yukon, Rio Grande)",What is the 4th longest river in North America?,North America ki fourth longest river konsi hai?
+75,mk_d6ef54e5,rejected,review: gold doubtful: most meteorites are found in Antarctica,Where have the most meteorites been found in the world?,World me sabse jyada meteorites kaha paaye gaye hai?
+76,mk_fc64b63c,rejected,review: record changed: India passed China in 2023,What country is the most populated in Asia?,Asia ka sabse jyada populated country konsa hai?
+77,mk_189c8396,rejected,review: contested: Egypt vs Persia,First civilization to use mail?,Kis civilisation ne sabse pehle mail use kiya tha?
+84,mk_a59e9377,rejected,review: ambiguous: advisers 1955 vs combat troops 1965,When did the US enter Vietnam war?,US ne Vietnam war mein kab bhag liya tha?
+90,mk_f603cfc1,rejected,annotator: multiple answers; Inuit are not First Nations,What was a Canadian Indian tribe?,Canadian Indian tride kya tha?
+106,mk_75c8f656,rejected,review: ill-posed question,Who was the first emperor of Rome known as prior to office?,Rome ka first emperor jisko prior to office bhi khete hai?
+112,mk_5b4c75ff,rejected,annotator: ambiguous: Augustus vs Eastern emperors (Theodosius II),Who ruled Rome for the longest period of time?,Rome ko longest time ke liye kisne rule kiya tha?
+115,mk_018b2bf3,rejected,review: vague ('affiliation'),What is Batman's affiliation?,Batman kisse affiliated hai?
+116,mk_146dcc1f,rejected,annotator: ambiguous: 'of 1998' = 1998 ceremony (Titanic) or 1998 films (Saving Private Ryan),What movie won Best Cinematography of 1998?,Konsi movie ko 1998 mein best Cinematography ka award mila tha?
+126,mk_896da71f,rejected,review: ambiguous: 2020 ceremony vs 2020 films,Who won the Best Actor Oscar in 2020?,Konse actor ne Best Actor Oscar jita tha 2020 mein?
+128,mk_c9622ac7,rejected,"review: ambiguous: academy founded 1947, first awards 1949",What year did the Baftas start?,Baftas konse year se start hui hai?
+134,mk_ad44b342,rejected,"annotator: multiple answers: Super, The Suicide Squad, Superman",What is the superhero movie directed by James Gunn but not for Marvel?,James Gunn ne konsi superhero  movie release ki thi joh Marvel ki nahi thi??
+148,mk_3d62451a,rejected,annotator: ambiguous: Guinness record (Swearnet) vs mainstream film (Wolf of Wall Street),Which movie uses the most swear words?,konsi movie mein sabse jada swear words use hue hai?
+150,mk_a0b5207f,rejected,annotator: no single record holder,What movie had the most actors?,sabse jada actors kise movie mein the?
+151,mk_c9ecf756,rejected,review: box-office record can change,Which Batman movie had the most box office success?,konsi Batman movie ki sabse jada box office success hai?
+154,mk_06d16e05,rejected,review: garbled question,Who won a Grammy for best Reggae album in 1995 five with Boombastic?,kisne Grammy for best Reggae album in 1995 five with Boombastic jita tha?
+161,mk_850350fa,rejected,annotator: sources disagree on founding year (1953-1955),When did the Jazz Messengers start?,Jazz Messengers kab start hua tha?
+162,mk_8f65c610,rejected,annotator: ambiguous: total (USA) vs per capita (Finland),Which country has produced the most heavy metal bands?,Konsi country ne sabse jada heavy metal bands produce kare hai?
+171,mk_d49bd732,rejected,review: duplicate of 155,Who is the singer of Nirvana from Aberdeen Washington?,Nirvana ka singer kon tha joh Aberdeen Washington se tha?
+179,mk_e8fda26f,rejected,review: ambiguous: Zanzibar (then) vs Tanzania (now),What country was the lead vocalist of Queen born in?,Queen ki lead singer ka birth kis country mein hua tha?
+183,mk_776d2154,rejected,review: ambiguous: award year 1991 vs ceremony 1992,When did Madonna win her first Grammy?,Madonna ne apna first Grammy kab jita tha?
+186,mk_4e75dd8f,rejected,review: view-count record can change,Which is the most viewed K-pop music video on YouTube?,YouTube ka most viewed K-pop music konsa hai?
+195,mk_6f4228ce,rejected,review: ambiguous: King Salman (head of state) vs MBS (PM),Who is the head of Saudi Arabia?,Saudi Arabia ka head kon tha?
+204,mk_fad7814e,rejected,annotator: time-sensitive ('last'),When did the Electoral College last cast their votes?,Electoral College ne last kb vote kiya tha?
+213,mk_83789a65,rejected,review: Hinglish asks who the president was; the question asks for his party (not retyped),What party did the U.S. president belong during the attack to the twin towers?,Twin Towers pe attack ke time par U.S. president kon tha?
+224,mk_c4a28e45,rejected,annotator: record changed in 2025 (Biden -> Trump),Who is the oldest person to assume the office of U.S. president?,US President banne wala sabse old insaan kaun tha?
+235,mk_5f57260f,rejected,review: two answers: Cowboys and Broncos,Which team did Tony Dorsett play for?,Tony Dorsett konsi team se khelta tha?
+237,mk_69d1eb61,rejected,review: ambiguous: Feb 2020 game vs 2020 season,Who won the Super Bowl in 2020?,2020 me Super Bowl kon jita tha?
+242,mk_39557ad0,rejected,review: time-sensitive ('last year'),Which team did Tom Brady leave last year in New England?,New England me Tom Brady ne pichle saal konsi team choodi thi?
+245,mk_942af0f8,rejected,review: ill-posed: World Cups are four years apart,Which soccer team won a World Cup but was eliminated in the quarter-finals of the World Cup the following year?,Konsi soccer team world cup jiti thi par uske agle saal world cup ke quarter final me eliminate ho gayi thi?
+246,mk_a73846e4,rejected,review: no longer true (Henderson left Liverpool in 2023),"Who is an English professional footballer who plays as a midfielder and captain for Premier League club Liverpool and also born on June 17, 1990?",17 June 1990 me janma professional football ka wo english player kon hai jo premier league club liverpool ke liye midfielder aur captain ke rup me khelta hai?
+247,mk_c4e9ea70,rejected,review: two answers: Michael Jordan and Charles Barkley,Who was part of the Dream Team and was born in 1963?,Kon dream team ka hissa tha aur 1963 me paida hua tha?
+250,mk_3716d98b,rejected,review: coach changes over time,Where was the coach of the Detroit Pistons born?,Detroit Prison ke coach ka janam kaha hua tha?
+260,mk_4fbea042,rejected,"annotator: ambiguous: singles/doubles, Open era or not (Rosewall, Navratilova, Federer)",Who is the oldest Grand Slam winner?,Oldest Grand Slam winner kon tha?
+261,mk_6d4d9f3d,rejected,annotator: two answers: Norway and Germany tied on golds,What country won the most gold medals at the 2018 Olympics?,kaunsi country ne 2018 Olympics mein sabse jada gold medals jite hai?
+262,mk_6efbbad7,rejected,review: contested after doping disqualifications,Which country won the most medals at the 2014 Olympics?,Kaunsi country ne 2014 Olympics mein sabse jada medals jite the?
+266,mk_044851ed,rejected,review: ambiguous: released 31 Dec 1996 (NA) vs 1997,What year was the original Diablo game released?,Original Diablo game kab release hua tha?
+268,mk_1b56f346,rejected,review: ambiguous: early access 2015 vs full release 2017,When did Ark: Survival Evolved first come out?,Ark: Survival Evolved first kab release hui thi?
+286,mk_ca177b71,rejected,"annotator: gold wrong, correct answer not established",When was the first Animal Crossing spin-off released in Europe?,First animal crossing spin off europe me kb release hua tha?
+288,mk_df4837ff,rejected,review: time-sensitive ('last'),When was the last Animal Crossing game released?,Last Animal crossing game kb release hua?
+292,mk_35ad9681,rejected,review: duplicate of 270,When was the first installment of the Halo series released?,halo series ka first installment kb release hua tha?
+293,mk_51d2b723,rejected,review: duplicate of 274,In what year was the first Legend of Zelda game released?,First legend of Zelda game konse year me release hua tha
+294,mk_d0b0a826,rejected,annotator: ambiguous: depends on counting expansions,What is the name of the fourth game in the Grand Theft Auto series?,Grand theft auto series ke fourth game ka name kya tha?
+296,mk_2ea25114,rejected,"annotator: annotator unsure, dropped",What game released in 2020 cost the most to make?,2020 ka konse game ko banane mein sabse jada cost laga tha?
+297,mk_39357217,rejected,review: sales record can change,What is the second most sold video game?,Dusra sbse jyada bikne wala game konsa hai?
+299,mk_9905b547,rejected,annotator: subjective ('biggest'),What is the biggest free Roam game?,Biggest Roam game kaunsa hai?
+300,mk_c8d3ebe9,rejected,review: duplicate of 297,What is the highest-selling Grand Theft Auto game?,highest-selling Grand Theft Auto game kaunsa hai??

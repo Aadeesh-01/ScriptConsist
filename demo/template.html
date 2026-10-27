@@ -1,0 +1,445 @@
+<title>ScriptConsist Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Browse 296 factual questions asked in English, Devanagari, rule-based Roman and natural Hinglish, and every answer from seven open language models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel:wght@700;800&family=Mukta:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: masthead with the headline chart, then a two-pane explorer (question list | question detail + answer grid). */
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --ink: #15171c;
+  --ink-2: #4b505c;
+  --ink-3: #7a7f8c;
+  --rule: #e2e4ea;
+  --rule-2: #eef0f4;
+  --accent: #2a5bd7;
+  --accent-soft: #e8eefc;
+  --f-en: #7d7c76;
+  --f-nat: #12946a;
+  --f-dev: #2a78d6;
+  --f-std: #e2612f;
+  --ok: #0f7d4a;
+  --ok-bg: #e5f4ec;
+  --bad: #b8342b;
+  --bad-bg: #fbe9e7;
+  --font-display: "Martel", "Noto Serif Devanagari", Georgia, serif;
+  --font-body: "Mukta", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111317; --panel: #191c22; --ink: #eceef2; --ink-2: #b4b9c5; --ink-3: #868c99;
+    --rule: #2b2f38; --rule-2: #22252c; --accent: #7aa2ff; --accent-soft: #1f2a44;
+    --f-en: #a7a69f; --f-nat: #2fbf8a; --f-dev: #4b93ea; --f-std: #ef7a4a;
+    --ok: #4cc98a; --ok-bg: #16301f; --bad: #f07a70; --bad-bg: #3a1c1a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111317; --panel: #191c22; --ink: #eceef2; --ink-2: #b4b9c5; --ink-3: #868c99;
+  --rule: #2b2f38; --rule-2: #22252c; --accent: #7aa2ff; --accent-soft: #1f2a44;
+  --f-en: #a7a69f; --f-nat: #2fbf8a; --f-dev: #4b93ea; --f-std: #ef7a4a;
+  --ok: #4cc98a; --ok-bg: #16301f; --bad: #f07a70; --bad-bg: #3a1c1a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+
+/* masthead */
+.mast { padding-block: 36px 8px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px; align-items: start; }
+.mast h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; letter-spacing: -.01em; }
+.mast h1 .dev { font-family: var(--font-display); color: var(--f-dev); }
+.lede { color: var(--ink-2); font-size: 18px; max-width: 34em; margin: 14px 0 0; }
+.forms-demo { margin-top: 20px; display: grid; gap: 6px; font-size: 15px; }
+.forms-demo div { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.forms-demo dt { margin: 0; }
+.facts { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-3); font-size: 14px; }
+.facts b { color: var(--ink); font-weight: 500; }
+.chart-card { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px 18px 10px; min-width: 0; }
+.chart-card h2 { font-size: 19px; }
+.chart-card p.sub { margin: 4px 0 8px; color: var(--ink-2); font-size: 14px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--ink-2); margin: 6px 0 2px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+svg.dots { width: 100%; height: auto; display: block; overflow: visible; }
+svg.dots text { fill: var(--ink-2); font-family: var(--font-body); }
+svg.dots .grid line { stroke: var(--rule); }
+svg.dots .row-line { stroke: var(--rule-2); stroke-width: 6; stroke-linecap: round; }
+svg.dots .mk { cursor: pointer; }
+.tip { position: fixed; z-index: 30; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 9px; border-radius: 6px; max-width: 260px; line-height: 1.35; }
+
+/* shape markers in HTML */
+.sh { display: inline-block; width: 11px; height: 11px; flex: none; }
+.sh.en { border: 2px solid var(--f-en); border-radius: 50%; background: var(--panel); }
+.sh.hi_rom_natural, .sh.hi_rom_second { background: var(--f-nat); transform: rotate(45deg) scale(.82); }
+.sh.hi_rom_second { background: transparent; border: 2px solid var(--f-nat); }
+.sh.hi_dev { background: var(--f-dev); border-radius: 2px; }
+.sh.hi_rom_std { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--f-std); }
+
+/* explorer */
+.explorer { padding-block: 28px 12px; }
+.ex-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.ex-head h2 { font-size: 26px; }
+.ex-head p { margin: 4px 0 0; color: var(--ink-2); max-width: 46em; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+.controls input[type=search], .controls select { font: inherit; font-size: 15px; color: var(--ink); background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 10px; min-width: 0; }
+.controls input[type=search] { flex: 1 1 240px; }
+.btn { font: inherit; font-size: 15px; font-weight: 500; color: var(--ink); background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+.btn:hover { border-color: var(--ink-3); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.seg button { font: inherit; font-size: 14px; border: 0; background: transparent; color: var(--ink-2); padding: 7px 11px; cursor: pointer; }
+.seg button[aria-pressed=true] { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.seg-label { font-size: 13px; color: var(--ink-3); margin-right: 2px; }
+
+.panes { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 16px; align-items: start; }
+.list { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); max-height: 760px; overflow-y: auto; min-width: 0; }
+.list-meta { position: sticky; top: 0; background: var(--panel); border-bottom: 1px solid var(--rule); padding: 8px 12px; font-size: 13px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 8px; z-index: 1; }
+.qrow { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-bottom: 1px solid var(--rule-2); padding: 9px 12px; cursor: pointer; }
+.qrow:hover { background: var(--rule-2); }
+.qrow[aria-current=true] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.qrow .qt { font-size: 14.5px; line-height: 1.35; display: block; }
+.qrow .qs { margin-top: 4px; display: flex; gap: 10px; font-size: 12.5px; color: var(--ink-3); align-items: center; }
+.qrow .qs span { display: inline-flex; align-items: center; gap: 4px; }
+.qrow .qs .sh { width: 8px; height: 8px; }
+.qrow .qs .sh.hi_rom_std { border-left-width: 4.5px; border-right-width: 4.5px; border-bottom-width: 8px; }
+.empty { padding: 20px 14px; color: var(--ink-3); font-size: 14px; }
+
+.detail { min-width: 0; display: grid; gap: 14px; }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px 18px; min-width: 0; }
+.dhead { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; justify-content: space-between; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 12.5px; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 999px; padding: 1px 9px; }
+.gold { margin-top: 10px; font-size: 15px; color: var(--ink-2); }
+.gold b { color: var(--ink); font-size: 18px; font-weight: 700; }
+.gold .alt { font-size: 13.5px; color: var(--ink-3); }
+.qforms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.qform { border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.qform .lab { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-3); letter-spacing: .03em; text-transform: uppercase; font-weight: 500; }
+.qform .txt { margin-top: 4px; font-size: 17px; line-height: 1.4; overflow-wrap: anywhere; }
+.qform .txt.dv { font-size: 18px; }
+.qform.second { border-style: dashed; }
+details.prompts { margin-top: 12px; font-size: 14px; }
+details.prompts summary { cursor: pointer; color: var(--accent); }
+details.prompts pre { white-space: pre-wrap; font-family: var(--font-mono); font-size: 12.5px; background: var(--rule-2); border-radius: 6px; padding: 8px 10px; margin: 8px 0 0; overflow-x: auto; }
+
+.grid-wrap { overflow-x: auto; }
+table.ans { width: 100%; border-collapse: collapse; min-width: 680px; font-size: 14px; }
+table.ans th { text-align: left; font-weight: 500; font-size: 12.5px; color: var(--ink-3); padding: 0 8px 8px; vertical-align: bottom; }
+table.ans th .h { display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: .03em; }
+table.ans td { border-top: 1px solid var(--rule-2); padding: 8px; vertical-align: top; }
+table.ans td.m { white-space: nowrap; font-weight: 500; }
+table.ans td.m small { display: block; font-weight: 400; color: var(--ink-3); font-size: 12px; }
+.cell { display: grid; gap: 3px; }
+.verdict { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 0 8px; width: max-content; }
+.verdict.ok { color: var(--ok); background: var(--ok-bg); }
+.verdict.bad { color: var(--bad); background: var(--bad-bg); }
+.resp { overflow-wrap: anywhere; color: var(--ink); line-height: 1.35; }
+.resp.dim { color: var(--ink-3); font-style: italic; }
+.of3 { font-size: 12px; color: var(--ink-3); }
+table.ans tfoot td { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule); }
+.note { font-size: 13.5px; color: var(--ink-3); margin: 10px 0 0; }
+
+footer { padding-block: 28px 40px; color: var(--ink-2); font-size: 14.5px; }
+footer .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--rule); padding-top: 18px; }
+footer h3 { font-size: 15px; margin-bottom: 4px; }
+footer p { margin: 0; }
+
+@media (max-width: 900px) {
+  .mast { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .panes { grid-template-columns: minmax(0, 1fr); }
+  .list { max-height: 330px; }
+  footer .cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .qforms { grid-template-columns: minmax(0, 1fr); }
+  .forms-demo div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}
+@media (prefers-reduced-motion: no-preference) { .qrow, .btn { transition: background .12s, border-color .12s; } }
+</style>
+
+<header class="wrap mast">
+  <div>
+    <div class="eyebrow">ScriptConsist · Threws Odyssey 2026</div>
+    <h1>One question, four ways to type it in Hindi</h1>
+    <p class="lede">We asked seven open language models the same 296 factual questions in English, in Devanagari, in a rule-based romanization, and in Hinglish as a native speaker actually types it. Every model knew more when asked in Hinglish than in Devanagari.</p>
+    <dl class="forms-demo" aria-label="Example question in four forms">
+      <div><dt class="eyebrow">English</dt><dd style="margin:0">When did George Orwell die?</dd></div>
+      <div><dt class="eyebrow">Devanagari</dt><dd style="margin:0" lang="hi">जॉर्ज ऑरवेल की मृत्यु कब हुई थी?</dd></div>
+      <div><dt class="eyebrow">Rule-based Roman</dt><dd style="margin:0">Jorj orvel ki mrityu kab hui thi?</dd></div>
+      <div><dt class="eyebrow">Natural Hinglish</dt><dd style="margin:0">George Orwell kab mare the?</dd></div>
+    </dl>
+    <div class="facts">
+      <span><b class="mono">296</b> questions</span>
+      <span><b class="mono">7</b> models</span>
+      <span><b class="mono">26,397</b> answers to browse</span>
+      <span>scorer vs. blind human check: <b class="mono">κ = 0.95</b></span>
+    </div>
+  </div>
+  <div class="chart-card">
+    <h2>Accuracy by question form</h2>
+    <p class="sub">Share of questions answered correctly, averaged over three prompt wordings. Hover a mark for the 95% interval.</p>
+    <div class="legend" id="legend"></div>
+    <svg class="dots" id="dots" role="img" aria-label="Dot plot of accuracy by model and question form"></svg>
+  </div>
+</header>
+
+<main class="wrap explorer" id="explore">
+  <div class="ex-head">
+    <div>
+      <h2>Explore the questions</h2>
+      <p>Pick a question to see it in every form, and what each model answered. Green means the answer matched the gold answer in any script.</p>
+    </div>
+  </div>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search questions or answers (English or Hinglish)" aria-label="Search questions">
+    <select id="topic" aria-label="Topic">
+      <option value="all">All topics</option>
+      <option value="india">About India (IndicQuest)</option>
+      <option value="global">Global (Mintaka)</option>
+    </select>
+    <select id="filter" aria-label="Show">
+      <option value="all">All questions</option>
+      <option value="nat-wins">Hinglish beats Devanagari</option>
+      <option value="dev-wins">Devanagari beats Hinglish</option>
+      <option value="script">Lost in rule-based Roman</option>
+      <option value="hard">No model gets it in English</option>
+      <option value="second">Typed by two people</option>
+    </select>
+    <button class="btn" id="rand" type="button">Random question</button>
+    <span class="seg-label">Prompt wording</span>
+    <div class="seg" role="group" aria-label="Prompt wording" id="wording">
+      <button type="button" data-w="0" aria-pressed="true">1</button>
+      <button type="button" data-w="1" aria-pressed="false">2</button>
+      <button type="button" data-w="2" aria-pressed="false">3</button>
+    </div>
+  </div>
+  <div class="panes">
+    <nav class="list" id="list" aria-label="Questions"></nav>
+    <section class="detail" id="detail" aria-live="polite"></section>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="cols">
+    <div>
+      <h3>How it was measured</h3>
+      <p>Each question was asked with three instruction wordings, written in the same form as the question. Decoding was greedy. An answer counts as right if it names the gold answer in any script; a model "gets" a question when it is right for at least two of the three wordings.</p>
+    </div>
+    <div>
+      <h3>Checking the scorer</h3>
+      <p>The automatic scorer was compared with 331 blind human judgments across all four forms: 97.6% agreement, Cohen's κ = 0.95. It almost never accepts a wrong answer (1 of 171) and occasionally misses a correct one (7 of 160).</p>
+    </div>
+    <div>
+      <h3>Data</h3>
+      <p>Questions from Mintaka (Amazon, CC BY 4.0) and L3Cube-IndicQuest (CC BY-NC-SA 4.0). Hinglish typed by the author. Released under CC BY-NC-SA 4.0. Aadeesh Surana, IIIT Vadodara.</p>
+    </div>
+  </div>
+</footer>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const FORMS = ["en", "hi_rom_natural", "hi_dev", "hi_rom_std"];
+const ALLFORMS = ["en", "hi_dev", "hi_rom_std", "hi_rom_natural", "hi_rom_second"];
+const LABEL = { en: "English", hi_dev: "Devanagari", hi_rom_std: "Rule-based Roman", hi_rom_natural: "Natural Hinglish", hi_rom_second: "Hinglish, 2nd typist" };
+const MODELS = DATA.models.map(m => m.name);
+const byId = Object.fromEntries(DATA.items.map(it => [it.id, it]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sh = f => `<span class="sh ${f}" aria-hidden="true"></span>`;
+let wording = 0;
+let current = null;
+
+// a model "gets" a question in a form if it is right for at least 2 of 3 wordings
+function gets(model, id, form) {
+  const a = DATA.answers[model]?.[id]?.[form];
+  return a ? a.filter(x => x && x[1]).length >= 2 : null;
+}
+const counts = {};
+for (const it of DATA.items) {
+  counts[it.id] = {};
+  for (const f of ALLFORMS) {
+    if (!(f in it.q)) continue;
+    counts[it.id][f] = MODELS.filter(m => gets(m, it.id, f)).length;
+  }
+}
+
+// ---------- headline chart ----------
+function drawChart() {
+  const svg = document.getElementById("dots");
+  const order = [...MODELS].sort((a, b) => DATA.acc[b].en[0] - DATA.acc[a].en[0]);
+  const W = Math.max(300, Math.round(svg.getBoundingClientRect().width) || 560);
+  const L = W < 460 ? 116 : 132, R = 14, T = 8, rowH = 30, xmax = 85;
+  const H = T + order.length * rowH + 30;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const x = v => L + (v / xmax) * (W - L - R);
+  let g = `<g class="grid">`;
+  for (let v = 0; v <= 80; v += 20) g += `<line x1="${x(v)}" x2="${x(v)}" y1="${T - 4}" y2="${T + order.length * rowH}"/><text x="${x(v)}" y="${H - 8}" text-anchor="middle" font-size="12">${v}%</text>`;
+  g += `</g>`;
+  const shape = (f, cx, cy) => {
+    const c = `var(--f-${{ en: "en", hi_rom_natural: "nat", hi_dev: "dev", hi_rom_std: "std" }[f]})`;
+    if (f === "en") return `<circle cx="${cx}" cy="${cy}" r="5.5" fill="var(--panel)" stroke="${c}" stroke-width="2"/>`;
+    if (f === "hi_dev") return `<rect x="${cx - 5.5}" y="${cy - 5.5}" width="11" height="11" rx="1.5" fill="${c}"/>`;
+    if (f === "hi_rom_std") return `<path d="M${cx} ${cy - 6.5} L${cx + 6.5} ${cy + 5} L${cx - 6.5} ${cy + 5} Z" fill="${c}"/>`;
+    return `<path d="M${cx} ${cy - 6.5} L${cx + 6.5} ${cy} L${cx} ${cy + 6.5} L${cx - 6.5} ${cy} Z" fill="${c}"/>`;
+  };
+  let rows = "";
+  order.forEach((m, i) => {
+    const cy = T + i * rowH + rowH / 2;
+    const vals = FORMS.map(f => DATA.acc[m][f][0]);
+    rows += `<line class="row-line" x1="${x(Math.min(...vals))}" x2="${x(Math.max(...vals))}" y1="${cy}" y2="${cy}"/>`;
+    rows += `<text x="${L - 10}" y="${cy + 4}" text-anchor="end" font-size="13">${esc(m)}</text>`;
+    // nudge marks that would overlap
+    const off = {}; FORMS.forEach(f => off[f] = 0);
+    for (let a = 0; a < FORMS.length; a++) for (let b = a + 1; b < FORMS.length; b++)
+      if (Math.abs(DATA.acc[m][FORMS[a]][0] - DATA.acc[m][FORMS[b]][0]) < 2.2 && !off[FORMS[a]] && !off[FORMS[b]]) { off[FORMS[a]] = -5; off[FORMS[b]] = 5; }
+    for (const f of FORMS) {
+      const [v, lo, hi] = DATA.acc[m][f];
+      rows += `<g class="mk" tabindex="0" data-tip="${esc(m)} · ${LABEL[f]}: ${v}% (95% CI ${lo}–${hi})">
+        <rect x="${x(v) - 10}" y="${cy + off[f] - 10}" width="20" height="20" fill="transparent"/>${shape(f, x(v), cy + off[f])}</g>`;
+    }
+  });
+  svg.innerHTML = g + rows;
+  document.getElementById("legend").innerHTML = FORMS.map(f => `<span>${sh(f)}${LABEL[f]}</span>`).join("");
+  const tip = document.getElementById("tip");
+  const show = (el, ev) => {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = el.getBoundingClientRect();
+    const px = ev && ev.clientX ? ev.clientX : r.left + r.width / 2, py = ev && ev.clientY ? ev.clientY : r.top;
+    tip.style.left = Math.min(px + 12, innerWidth - tip.offsetWidth - 8) + "px";
+    tip.style.top = Math.max(8, py - tip.offsetHeight - 10) + "px";
+  };
+  svg.querySelectorAll(".mk").forEach(el => {
+    el.addEventListener("mousemove", ev => show(el, ev));
+    el.addEventListener("focus", () => show(el));
+    el.addEventListener("mouseleave", () => tip.hidden = true);
+    el.addEventListener("blur", () => tip.hidden = true);
+  });
+}
+
+// ---------- list ----------
+function matches(it) {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const topic = document.getElementById("topic").value;
+  const fil = document.getElementById("filter").value;
+  if (topic !== "all" && it.loc !== topic) return false;
+  if (q && !(it.q.en + " " + it.q.hi_rom_natural + " " + it.q.hi_dev + " " + it.gold).toLowerCase().includes(q)) return false;
+  const c = counts[it.id];
+  if (fil === "nat-wins" && !(c.hi_rom_natural - c.hi_dev >= 3)) return false;
+  if (fil === "dev-wins" && !(c.hi_dev > c.hi_rom_natural)) return false;
+  if (fil === "script" && !(c.hi_dev - c.hi_rom_std >= 3)) return false;
+  if (fil === "hard" && c.en !== 0) return false;
+  if (fil === "second" && !("hi_rom_second" in it.q)) return false;
+  return true;
+}
+function renderList() {
+  const items = DATA.items.filter(matches);
+  const list = document.getElementById("list");
+  let html = `<div class="list-meta"><span>${items.length} of ${DATA.items.length} questions</span><span>models that get it, of 7</span></div>`;
+  if (!items.length) html += `<div class="empty">No questions match. Clear the search or choose another filter.</div>`;
+  for (const it of items) {
+    const c = counts[it.id];
+    html += `<button class="qrow" type="button" data-id="${it.id}" aria-current="${current === it.id}">
+      <span class="qt">${esc(it.q.en)}</span>
+      <span class="qs">${FORMS.map(f => `<span title="${LABEL[f]}: ${c[f]} of 7 models">${sh(f)}<span class="mono">${c[f]}</span></span>`).join("")}</span>
+    </button>`;
+  }
+  list.innerHTML = html;
+  list.querySelectorAll(".qrow").forEach(b => b.addEventListener("click", () => select(b.dataset.id, true)));
+}
+
+// ---------- detail ----------
+function fillPrompt(f, it) {
+  const tf = f === "hi_rom_second" ? "hi_rom_second" : f;
+  return DATA.templates[tf][wording].replace("{q}", it.q[f]);
+}
+function renderDetail() {
+  const it = byId[current];
+  const forms = ALLFORMS.filter(f => f in it.q);
+  const order = ["en", "hi_dev", "hi_rom_std", "hi_rom_natural", "hi_rom_second"].filter(f => forms.includes(f));
+  const formCard = f => `<div class="qform ${f === "hi_rom_second" ? "second" : ""}">
+      <div class="lab">${sh(f)}${LABEL[f]}</div>
+      <div class="txt ${f === "hi_dev" ? "dv" : ""}" ${f === "hi_dev" ? 'lang="hi"' : ""}>${esc(it.q[f])}</div></div>`;
+  const head = `<div class="card">
+    <div class="dhead">
+      <div class="tags"><span class="tag">${esc(it.dom)}</span><span class="tag">${it.loc === "india" ? "About India" : "Global"}</span><span class="tag">${it.src === "mintaka" ? "Mintaka" : "IndicQuest"}</span></div>
+      <span class="mono" style="font-size:12.5px;color:var(--ink-3)">${esc(it.id)}</span>
+    </div>
+    <div class="gold">Gold answer: <b>${esc(it.gold)}</b>${it.alt.length ? ` <span class="alt">· also accepted: ${it.alt.map(esc).join(", ")}</span>` : ""}</div>
+    <div class="qforms">${order.map(formCard).join("")}</div>
+    <details class="prompts"><summary>See the exact prompts (wording ${wording + 1})</summary>
+      ${order.map(f => `<pre ${f === "hi_dev" ? 'lang="hi"' : ""}><span style="color:var(--ink-3)">${LABEL[f]}</span>\n${esc(fillPrompt(f, it))}</pre>`).join("")}
+    </details>
+  </div>`;
+  const cols = order;
+  let rows = "";
+  for (const m of MODELS) {
+    const note = DATA.models.find(x => x.name === m).note;
+    rows += `<tr><td class="m">${esc(m)}<small>${esc(note)}</small></td>`;
+    for (const f of cols) {
+      const a = DATA.answers[m]?.[it.id]?.[f];
+      if (!a || !a[wording]) { rows += `<td><span class="resp dim">not asked</span></td>`; continue; }
+      const [resp, ok] = a[wording];
+      const n = a.filter(x => x && x[1]).length;
+      rows += `<td><div class="cell">
+        <span class="verdict ${ok ? "ok" : "bad"}">${ok ? "✓ Right" : "✗ Wrong"}</span>
+        <span class="resp ${resp ? "" : "dim"}" ${/[ऀ-ॿ]/.test(resp) ? 'lang="hi"' : ""}>${resp ? esc(resp) : "(empty answer)"}</span>
+        <span class="of3">right in ${n} of 3 wordings</span></div></td>`;
+    }
+    rows += `</tr>`;
+  }
+  const foot = `<tr><td>Models that get it</td>${cols.map(f => `<td class="mono">${counts[it.id][f]} of 7</td>`).join("")}</tr>`;
+  const table = `<div class="card">
+    <h3 style="font-size:18px">What the models answered</h3>
+    <p class="note" style="margin:2px 0 12px">Showing prompt wording ${wording + 1}. Switch wordings above; the "right in … of 3" line covers all three.</p>
+    <div class="grid-wrap"><table class="ans">
+      <thead><tr><th>Model</th>${cols.map(f => `<th><span class="h">${sh(f)}${LABEL[f]}</span></th>`).join("")}</tr></thead>
+      <tbody>${rows}</tbody><tfoot>${foot}</tfoot></table></div>
+  </div>`;
+  document.getElementById("detail").innerHTML = head + table;
+}
+function select(id, fromUser) {
+  if (!byId[id]) return;
+  current = id;
+  document.querySelectorAll(".qrow").forEach(b => b.setAttribute("aria-current", String(b.dataset.id === id)));
+  renderDetail();
+  if (fromUser) {
+    try { history.replaceState(null, "", "#q-" + id.replace(/_/g, "-")); } catch (e) {}
+    if (innerWidth <= 900) document.getElementById("detail").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+function idFromHash() {
+  const h = location.hash.replace(/^#q-/, "");
+  if (!h) return null;
+  const id = h.replace(/^(mk|iq)-/, "$1_");
+  return byId[id] ? id : null;
+}
+
+// ---------- wiring ----------
+drawChart();
+let lastW = innerWidth;
+addEventListener("resize", () => { if (Math.abs(innerWidth - lastW) > 40) { lastW = innerWidth; drawChart(); } });
+["q", "topic", "filter"].forEach(id => document.getElementById(id).addEventListener("input", () => {
+  renderList();
+  const first = DATA.items.find(matches);
+  if (first && !DATA.items.filter(matches).some(it => it.id === current)) select(first.id, false);
+}));
+document.getElementById("rand").addEventListener("click", () => {
+  const pool = DATA.items.filter(matches);
+  if (pool.length) { const it = pool[Math.floor(Math.random() * pool.length)]; select(it.id, true); document.querySelector(`.qrow[data-id="${it.id}"]`)?.scrollIntoView({ block: "nearest" }); }
+});
+document.querySelectorAll("#wording button").forEach(b => b.addEventListener("click", () => {
+  wording = +b.dataset.w;
+  document.querySelectorAll("#wording button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  renderDetail();
+}));
+addEventListener("hashchange", () => { const id = idFromHash(); if (id) select(id, false); });
+current = idFromHash() || "mk_2095e40c";
+renderList();
+select(current, false);
+</script>

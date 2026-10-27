@@ -1,0 +1,12 @@
+# dataset, scoring, analysis, figures, demo build (CPU)
+aksharamukha>=2.3
+rapidfuzz>=3.0
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+
+# model runs (GPU; see notebooks/ for the Kaggle setup)
+torch>=2.1
+transformers>=4.44
+accelerate>=0.30
+bitsandbytes>=0.43

@@ -1,0 +1,18 @@
+id,form,model,scorer,human,rule,gold,response,note
+v022,en,nvidia/Nemotron-4-Mini-Hindi-4B-Instruct,wrong,correct,no_match,Liberal Democratic Party,LDP.,
+v032,hi_rom_std,Qwen/Qwen2.5-7B-Instruct,wrong,unsure,no_match,Sedimentary rock,जीवश्म सामान्यतः चट्टन में पाए जाते हैं।,
+v055,hi_rom_natural,nvidia/Nemotron-4-Mini-Hindi-4B-Instruct,wrong,correct,no_match,suicide,"Ernest Hemingway, a renowned American author, died in 1961 due to a self-inflicted gunshot wound to the chest. He had been hospitalized for several weeks due to a severe case of kidney disease and depression. Hemingway,",
+v117,hi_dev,google/gemma-2-9b-it,wrong,correct,no_match,Vice President of the United States,व्हिसपर प्रेसिडेंट,
+v122,hi_rom_std,CohereLabs/aya-expanse-8b,correct,wrong,year,1519,67 sal ki umra men Mona Lisa aur Da Vinci (jisne uska chitra banaya) ka nishaan 1517-1519 ke bich aa jane ka anusar,mentioned a range for death
+v146,hi_rom_natural,Qwen/Qwen2.5-7B-Instruct,wrong,correct,no_match,Satopanth Glacier,Bhagirathi glaciers,
+v157,en,meta-llama/Llama-3.1-8B-Instruct,wrong,unsure,no_match,Ibrahim Adil Shah II,I couldn't find any information on the book 'Kitab-e-Navras'.,mentioned coudnt find the answer
+v164,hi_dev,meta-llama/Llama-3.1-8B-Instruct,wrong,correct,no_match,Mediterranean Sea,एजियन समुद्र,
+v177,en,meta-llama/Llama-3.1-8B-Instruct,wrong,unsure,no_match,"16,110 rupees",I am unable to verify the construction cost of Shaniwar Wada.,mentioned could not answer the question
+v190,hi_rom_std,meta-llama/Llama-3.1-8B-Instruct,wrong,unsure,no_match,Majhi Janmathep,"Savarkar ki atmakatha ka nam ""Mere Swaraj"" tha.",
+v197,en,google/gemma-2-9b-it,wrong,correct,no_match,Greece,Ancient Athens,
+v218,en,meta-llama/Llama-3.1-8B-Instruct,wrong,correct,no_match,The Fellowship of the Ring,The Lord of the Rings.,we couls=d work with this
+v219,hi_rom_natural,Qwen/Qwen2.5-7B-Instruct,wrong,unsure,no_match,Spain,"Columbia ko 1813 mein Venezuela se swatantra mili, lekin technically Colombia ne swatantra mili hai, kyunki usse Venezuela ek separate country ban gayi 1830 mein.",
+v231,hi_dev,Qwen/Qwen2.5-7B-Instruct,wrong,unsure,no_match,Wright brothers,किटी हॉक पर सबसे पहले अल और जेम्स हॉक भाइयों ने उड�,
+v234,hi_dev,CohereLabs/aya-expanse-8b,wrong,unsure,no_match,Super Nintendo Entertainment System,निंटेंडो एंटरटेनमेंट सिस्टम (NES),
+v338,hi_rom_natural,BhabhaAI/Gajendra-v0.1,correct,unsure,year,1993,"1991, 1993, 1998",gave three different years
+v340,hi_rom_natural,BhabhaAI/Gajendra-v0.1,wrong,unsure,no_match,Donald Trump,"naam, jagah, title ya saal",
